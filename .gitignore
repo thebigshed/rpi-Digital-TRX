@@ -1,0 +1,11 @@
+# Buildroot itself and build output
+buildroot/
+output/
+dl/
+
+# local settings for testing (personal details)
+/settings.json
+/wpa_supplicant.conf
+
+# desktop test builds of the app
+/app/build/

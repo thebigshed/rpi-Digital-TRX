@@ -1,0 +1,658 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="1240" viewBox="0 0 1700 1240" font-family="DejaVu Sans, Arial, sans-serif">
+<rect x="0" y="0" width="1700" height="1240" rx="0" fill="#ffffff" stroke="#ffffff" stroke-width="1.5"/>
+<text x="30" y="42" font-size="26" text-anchor="start" font-weight="bold" fill="#202124">rpi-Digital-TRX front panel — wiring</text>
+<text x="30" y="66" font-size="14" text-anchor="start" font-weight="normal" fill="#5f6368">Wires with the same coloured label are connected. Pin numbers are physical header pins; GPIO numbers are BCM. See wiring.md for details and tests.</text>
+<rect x="25" y="80" width="400" height="580" rx="10" fill="#f8f9fa" stroke="#5f6368" stroke-width="1.5"/>
+<text x="225" y="102" font-size="15" text-anchor="middle" font-weight="bold" fill="#202124">Raspberry Pi 4 — 40-pin header</text>
+<circle cx="210" cy="128" r="9" fill="#d93025" stroke="#202124" stroke-width="1"/>
+<text x="210" y="132" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">1</text>
+<text x="194" y="132" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">3.3 V</text>
+<circle cx="240" cy="128" r="9" fill="#b00020" stroke="#202124" stroke-width="1"/>
+<text x="240" y="132" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">2</text>
+<text x="256" y="132" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">5 V</text>
+<circle cx="210" cy="154" r="9" fill="#1a73e8" stroke="#202124" stroke-width="1"/>
+<text x="210" y="158" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">3</text>
+<text x="194" y="158" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 2 SDA</text>
+<circle cx="240" cy="154" r="9" fill="#b00020" stroke="#202124" stroke-width="1"/>
+<text x="240" y="158" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">4</text>
+<text x="256" y="158" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">5 V</text>
+<circle cx="210" cy="180" r="9" fill="#0b57d0" stroke="#202124" stroke-width="1"/>
+<text x="210" y="184" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">5</text>
+<text x="194" y="184" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 3 SCL</text>
+<circle cx="240" cy="180" r="9" fill="#202124" stroke="#202124" stroke-width="1"/>
+<text x="240" y="184" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">6</text>
+<text x="256" y="184" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GND</text>
+<circle cx="210" cy="206" r="9" fill="#9aa0a6" stroke="#202124" stroke-width="1"/>
+<text x="210" y="210" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">7</text>
+<text x="194" y="210" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 4 — DV3000 reset</text>
+<circle cx="240" cy="206" r="9" fill="#9aa0a6" stroke="#202124" stroke-width="1"/>
+<text x="240" y="210" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">8</text>
+<text x="256" y="210" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 14 — DV3000 TX</text>
+<circle cx="210" cy="232" r="9" fill="#202124" stroke="#202124" stroke-width="1"/>
+<text x="210" y="236" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">9</text>
+<text x="194" y="236" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GND</text>
+<circle cx="240" cy="232" r="9" fill="#9aa0a6" stroke="#202124" stroke-width="1"/>
+<text x="240" y="236" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">10</text>
+<text x="256" y="236" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 15 — DV3000 RX</text>
+<circle cx="210" cy="258" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
+<text x="210" y="262" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">11</text>
+<text x="194" y="262" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 17 CH-CLK</text>
+<circle cx="240" cy="258" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
+<text x="240" y="262" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">12</text>
+<text x="256" y="262" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 18 VOL-SW</text>
+<circle cx="210" cy="284" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
+<text x="210" y="288" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">13</text>
+<text x="194" y="288" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 27 CH-DT</text>
+<circle cx="240" cy="284" r="9" fill="#202124" stroke="#202124" stroke-width="1"/>
+<text x="240" y="288" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">14</text>
+<text x="256" y="288" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GND</text>
+<circle cx="210" cy="310" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
+<text x="210" y="314" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">15</text>
+<text x="194" y="314" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 22 CH-SW</text>
+<circle cx="240" cy="310" r="9" fill="#e8710a" stroke="#202124" stroke-width="1"/>
+<text x="240" y="314" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">16</text>
+<text x="256" y="314" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 23 PTT</text>
+<circle cx="210" cy="336" r="9" fill="#d93025" stroke="#202124" stroke-width="1"/>
+<text x="210" y="340" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">17</text>
+<text x="194" y="340" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">3.3 V</text>
+<circle cx="240" cy="336" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="240" y="340" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">18</text>
+<text x="256" y="340" font-size="12" text-anchor="start" font-weight="normal" fill="#9aa0a6">GPIO 24 spare</text>
+<circle cx="210" cy="362" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="210" y="366" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">19</text>
+<text x="194" y="366" font-size="12" text-anchor="end" font-weight="normal" fill="#9aa0a6">GPIO 10</text>
+<circle cx="240" cy="362" r="9" fill="#202124" stroke="#202124" stroke-width="1"/>
+<text x="240" y="366" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">20</text>
+<text x="256" y="366" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GND</text>
+<circle cx="210" cy="388" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="210" y="392" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">21</text>
+<text x="194" y="392" font-size="12" text-anchor="end" font-weight="normal" fill="#9aa0a6">GPIO 9</text>
+<circle cx="240" cy="388" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="240" y="392" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">22</text>
+<text x="256" y="392" font-size="12" text-anchor="start" font-weight="normal" fill="#9aa0a6">GPIO 25 spare</text>
+<circle cx="210" cy="414" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="210" y="418" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">23</text>
+<text x="194" y="418" font-size="12" text-anchor="end" font-weight="normal" fill="#9aa0a6">GPIO 11</text>
+<circle cx="240" cy="414" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="240" y="418" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">24</text>
+<text x="256" y="418" font-size="12" text-anchor="start" font-weight="normal" fill="#9aa0a6">GPIO 8</text>
+<circle cx="210" cy="440" r="9" fill="#202124" stroke="#202124" stroke-width="1"/>
+<text x="210" y="444" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">25</text>
+<text x="194" y="444" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GND</text>
+<circle cx="240" cy="440" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="240" y="444" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">26</text>
+<text x="256" y="444" font-size="12" text-anchor="start" font-weight="normal" fill="#9aa0a6">GPIO 7</text>
+<circle cx="210" cy="466" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="210" y="470" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">27</text>
+<text x="194" y="470" font-size="12" text-anchor="end" font-weight="normal" fill="#9aa0a6">ID_SD</text>
+<circle cx="240" cy="466" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
+<text x="240" y="470" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">28</text>
+<text x="256" y="470" font-size="12" text-anchor="start" font-weight="normal" fill="#9aa0a6">ID_SC</text>
+<circle cx="210" cy="492" r="9" fill="#188038" stroke="#202124" stroke-width="1"/>
+<text x="210" y="496" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">29</text>
+<text x="194" y="496" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 5 DMR</text>
+<circle cx="240" cy="492" r="9" fill="#202124" stroke="#202124" stroke-width="1"/>
+<text x="240" y="496" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">30</text>
+<text x="256" y="496" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GND</text>
+<circle cx="210" cy="518" r="9" fill="#188038" stroke="#202124" stroke-width="1"/>
+<text x="210" y="522" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">31</text>
+<text x="194" y="522" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 6 D-STAR</text>
+<circle cx="240" cy="518" r="9" fill="#188038" stroke="#202124" stroke-width="1"/>
+<text x="240" y="522" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">32</text>
+<text x="256" y="522" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 12 YSF</text>
+<circle cx="210" cy="544" r="9" fill="#188038" stroke="#202124" stroke-width="1"/>
+<text x="210" y="548" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">33</text>
+<text x="194" y="548" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 13 P25</text>
+<circle cx="240" cy="544" r="9" fill="#202124" stroke="#202124" stroke-width="1"/>
+<text x="240" y="548" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">34</text>
+<text x="256" y="548" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GND</text>
+<circle cx="210" cy="570" r="9" fill="#188038" stroke="#202124" stroke-width="1"/>
+<text x="210" y="574" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">35</text>
+<text x="194" y="574" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 19 NXDN</text>
+<circle cx="240" cy="570" r="9" fill="#188038" stroke="#202124" stroke-width="1"/>
+<text x="240" y="574" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">36</text>
+<text x="256" y="574" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 16 M17</text>
+<circle cx="210" cy="596" r="9" fill="#188038" stroke="#202124" stroke-width="1"/>
+<text x="210" y="600" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">37</text>
+<text x="194" y="600" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 26 MENU</text>
+<circle cx="240" cy="596" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
+<text x="240" y="600" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">38</text>
+<text x="256" y="600" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 20 VOL-CLK</text>
+<circle cx="210" cy="622" r="9" fill="#202124" stroke="#202124" stroke-width="1"/>
+<text x="210" y="626" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">39</text>
+<text x="194" y="626" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GND</text>
+<circle cx="240" cy="622" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
+<text x="240" y="626" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">40</text>
+<text x="256" y="626" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 21 VOL-DT</text>
+<rect x="195" y="115" width="60" height="338" rx="6" fill="none" stroke="#9aa0a6" stroke-dasharray="5 4" stroke-width="1.5"/>
+<text x="35" y="756" font-size="11" text-anchor="start" font-weight="normal" fill="#5f6368" font-style="italic">Dashed box: pins 1–26 are under the DV3000 — reach them</text>
+<text x="35" y="770" font-size="11" text-anchor="start" font-weight="normal" fill="#5f6368" font-style="italic">through a 40-pin GPIO splitter or a tall stacking header.</text>
+<circle cx="41" cy="680" r="6" fill="#d93025"/>
+<text x="51" y="684" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">3.3 V</text>
+<circle cx="136" cy="680" r="6" fill="#b00020"/>
+<text x="146" y="684" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">5 V</text>
+<circle cx="231" cy="680" r="6" fill="#202124"/>
+<text x="241" y="684" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">GND</text>
+<circle cx="326" cy="680" r="6" fill="#1a73e8"/>
+<text x="336" y="684" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">I2C 3.3 V</text>
+<circle cx="41" cy="702" r="6" fill="#00838f"/>
+<text x="51" y="706" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">I2C 5 V</text>
+<circle cx="136" cy="702" r="6" fill="#8430ce"/>
+<text x="146" y="706" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">Encoders</text>
+<circle cx="231" cy="702" r="6" fill="#188038"/>
+<text x="241" y="706" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">Buttons</text>
+<circle cx="326" cy="702" r="6" fill="#e8710a"/>
+<text x="336" y="706" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">PTT</text>
+<circle cx="41" cy="724" r="6" fill="#9aa0a6"/>
+<text x="51" y="728" font-size="11" text-anchor="start" font-weight="normal" fill="#202124">DV3000 — leave alone</text>
+<rect x="470" y="100" width="300" height="150" rx="10" fill="#f8f9fa" stroke="#5f6368" stroke-width="1.5"/>
+<text x="620" y="122" font-size="14" text-anchor="middle" font-weight="bold" fill="#202124">I2C level shifter (BSS138)</text>
+<text x="484" y="154" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">LV</text>
+<text x="756" y="154" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">HV</text>
+<line x1="460" y1="150" x2="470" y2="150" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="410" y="140" width="48" height="20" rx="10" fill="#d93025"/>
+<text x="434.0" y="154.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">3.3V</text>
+<text x="484" y="180" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">GND</text>
+<text x="756" y="180" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GND</text>
+<line x1="460" y1="176" x2="470" y2="176" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="418" y="166" width="40" height="20" rx="10" fill="#202124"/>
+<text x="438.0" y="180.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="484" y="206" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">LV1</text>
+<text x="756" y="206" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">HV1</text>
+<line x1="460" y1="202" x2="470" y2="202" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<rect x="418" y="192" width="40" height="20" rx="10" fill="#1a73e8"/>
+<text x="438.0" y="206.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">SDA</text>
+<text x="484" y="232" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">LV2</text>
+<text x="756" y="232" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">HV2</text>
+<line x1="460" y1="228" x2="470" y2="228" stroke="#0b57d0" stroke-width="2" stroke-linecap="round"/>
+<rect x="418" y="218" width="40" height="20" rx="10" fill="#0b57d0"/>
+<text x="438.0" y="232.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">SCL</text>
+<rect x="900" y="100" width="360" height="150" rx="10" fill="#e8f0fe" stroke="#1a73e8" stroke-width="1.5"/>
+<text x="1080" y="120" font-size="14" text-anchor="middle" font-weight="bold" fill="#202124">20×4 LCD + PCF8574 backpack</text>
+<text x="1080" y="137" font-size="12" text-anchor="middle" font-weight="normal" fill="#5f6368">I2C address 0x27 (or 0x3F)</text>
+<text x="914" y="154" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">VCC</text>
+<line x1="770" y1="150" x2="900" y2="150" stroke="#b00020" stroke-width="2" stroke-linecap="round"/>
+<rect x="805" y="140" width="32" height="20" rx="10" fill="#b00020"/>
+<text x="821.0" y="154.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
+<text x="914" y="180" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">GND</text>
+<line x1="770" y1="176" x2="900" y2="176" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<text x="914" y="206" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">SDA</text>
+<line x1="770" y1="202" x2="900" y2="202" stroke="#4285f4" stroke-width="2" stroke-linecap="round"/>
+<line x1="770" y1="202" x2="900" y2="202" stroke="#00838f" stroke-width="2" stroke-linecap="round"/>
+<rect x="805" y="192" width="64" height="20" rx="10" fill="#00838f"/>
+<text x="837.0" y="206.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">SDA 5V</text>
+<text x="914" y="232" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">SCL</text>
+<line x1="770" y1="228" x2="900" y2="228" stroke="#4285f4" stroke-width="2" stroke-linecap="round"/>
+<line x1="770" y1="228" x2="900" y2="228" stroke="#006064" stroke-width="2" stroke-linecap="round"/>
+<rect x="805" y="218" width="64" height="20" rx="10" fill="#006064"/>
+<text x="837.0" y="232.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">SCL 5V</text>
+<rect x="970" y="148" width="270" height="90" rx="4" fill="#2d5a27" stroke="#1e3d1a"/>
+<text x="982" y="170" font-size="14" font-family="DejaVu Sans Mono, monospace" fill="#c8f7c5">DSTR REF001 E  12:41</text>
+<text x="982" y="189" font-size="14" font-family="DejaVu Sans Mono, monospace" fill="#c8f7c5">M6OZE  Ozzy</text>
+<text x="982" y="208" font-size="14" font-family="DejaVu Sans Mono, monospace" fill="#c8f7c5">>CQCQCQ        0:07</text>
+<text x="982" y="227" font-size="14" font-family="DejaVu Sans Mono, monospace" fill="#c8f7c5">RX  192.168.101.75</text>
+<rect x="520" y="330" width="230" height="490" rx="10" fill="#fef7e0" stroke="#e37400" stroke-width="1.5"/>
+<text x="635" y="352" font-size="14" text-anchor="middle" font-weight="bold" fill="#202124">Module A</text>
+<text x="635" y="370" font-size="12" text-anchor="middle" font-weight="normal" fill="#5f6368">MCP23017 — I2C 0x21, on 5 V</text>
+<text x="532" y="398" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">VCC</text>
+<line x1="510" y1="394" x2="520" y2="394" stroke="#b00020" stroke-width="2" stroke-linecap="round"/>
+<rect x="476" y="384" width="32" height="20" rx="10" fill="#b00020"/>
+<text x="492.0" y="398.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
+<text x="532" y="420" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">GND</text>
+<line x1="510" y1="416" x2="520" y2="416" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="468" y="406" width="40" height="20" rx="10" fill="#202124"/>
+<text x="488.0" y="420.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="532" y="442" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">SDA</text>
+<line x1="510" y1="438" x2="520" y2="438" stroke="#00838f" stroke-width="2" stroke-linecap="round"/>
+<rect x="444" y="428" width="64" height="20" rx="10" fill="#00838f"/>
+<text x="476.0" y="442.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">SDA 5V</text>
+<text x="532" y="464" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">SCL</text>
+<line x1="510" y1="460" x2="520" y2="460" stroke="#006064" stroke-width="2" stroke-linecap="round"/>
+<rect x="444" y="450" width="64" height="20" rx="10" fill="#006064"/>
+<text x="476.0" y="464.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">SCL 5V</text>
+<text x="532" y="486" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">A0</text>
+<line x1="510" y1="482" x2="520" y2="482" stroke="#b00020" stroke-width="2" stroke-linecap="round"/>
+<rect x="476" y="472" width="32" height="20" rx="10" fill="#b00020"/>
+<text x="492.0" y="486.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
+<text x="532" y="508" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">A1</text>
+<line x1="510" y1="504" x2="520" y2="504" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="468" y="494" width="40" height="20" rx="10" fill="#202124"/>
+<text x="488.0" y="508.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="532" y="530" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">A2</text>
+<line x1="510" y1="526" x2="520" y2="526" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="468" y="516" width="40" height="20" rx="10" fill="#202124"/>
+<text x="488.0" y="530.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="532" y="552" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">RST</text>
+<line x1="510" y1="548" x2="520" y2="548" stroke="#b00020" stroke-width="2" stroke-linecap="round"/>
+<rect x="476" y="538" width="32" height="20" rx="10" fill="#b00020"/>
+<text x="492.0" y="552.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
+<text x="738" y="398" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA0</text>
+<line x1="750" y1="394" x2="782" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="388" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="385" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="816" y1="394" x2="850" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="424" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA1</text>
+<line x1="750" y1="420" x2="782" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="414" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="411" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="420" x2="850" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="450" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA2</text>
+<line x1="750" y1="446" x2="782" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="440" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="437" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="446" x2="850" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="476" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA3</text>
+<line x1="750" y1="472" x2="782" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="466" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="463" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="816" y1="472" x2="850" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="502" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA4</text>
+<line x1="750" y1="498" x2="782" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="492" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="489" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="498" x2="850" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="528" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA5</text>
+<line x1="750" y1="524" x2="782" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="518" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="515" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="524" x2="850" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="554" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA6</text>
+<line x1="750" y1="550" x2="782" y2="550" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="544" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="541" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="816" y1="550" x2="850" y2="550" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="580" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA7</text>
+<line x1="750" y1="576" x2="782" y2="576" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="570" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="567" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="576" x2="850" y2="576" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="606" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB0</text>
+<line x1="750" y1="602" x2="782" y2="602" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="596" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="593" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="602" x2="850" y2="602" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="632" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB1</text>
+<line x1="750" y1="628" x2="782" y2="628" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="622" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="619" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="816" y1="628" x2="850" y2="628" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="658" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB2</text>
+<line x1="750" y1="654" x2="782" y2="654" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="648" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="645" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="654" x2="850" y2="654" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="684" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB3</text>
+<line x1="750" y1="680" x2="782" y2="680" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="674" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="671" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="680" x2="850" y2="680" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="710" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB4</text>
+<line x1="750" y1="706" x2="782" y2="706" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="700" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="697" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="816" y1="706" x2="850" y2="706" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="736" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB5</text>
+<line x1="750" y1="732" x2="782" y2="732" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="726" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="723" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="732" x2="850" y2="732" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="762" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB6</text>
+<line x1="750" y1="758" x2="782" y2="758" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<rect x="782" y="752" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="799" y="749" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="758" x2="850" y2="758" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="738" y="788" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB7</text>
+<text x="770" y="788" font-size="11" text-anchor="start" font-weight="normal" fill="#9aa0a6" font-style="italic">spare</text>
+<rect x="850" y="378" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
+<polygon points="866,387 866,401 880,394" fill="#d93025"/>
+<line x1="882" y1="387" x2="882" y2="401" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="394" x2="866" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="394" x2="902" y2="394" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,413 866,427 880,420" fill="#188038"/>
+<line x1="882" y1="413" x2="882" y2="427" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="420" x2="866" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="420" x2="902" y2="420" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,439 866,453 880,446" fill="#1a73e8"/>
+<line x1="882" y1="439" x2="882" y2="453" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="446" x2="866" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="446" x2="902" y2="446" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="394" x2="902" y2="446" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="420.0" x2="934" y2="420.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="936" y="410.0" width="40" height="20" rx="10" fill="#202124"/>
+<text x="956.0" y="424.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="986" y="425.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">DMR</text>
+<rect x="850" y="456" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
+<polygon points="866,465 866,479 880,472" fill="#d93025"/>
+<line x1="882" y1="465" x2="882" y2="479" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="472" x2="866" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="472" x2="902" y2="472" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,491 866,505 880,498" fill="#188038"/>
+<line x1="882" y1="491" x2="882" y2="505" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="498" x2="866" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="498" x2="902" y2="498" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,517 866,531 880,524" fill="#1a73e8"/>
+<line x1="882" y1="517" x2="882" y2="531" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="524" x2="866" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="524" x2="902" y2="524" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="472" x2="902" y2="524" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="498.0" x2="934" y2="498.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="936" y="488.0" width="40" height="20" rx="10" fill="#202124"/>
+<text x="956.0" y="502.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="986" y="503.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">D-Star</text>
+<rect x="850" y="534" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
+<polygon points="866,543 866,557 880,550" fill="#d93025"/>
+<line x1="882" y1="543" x2="882" y2="557" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="550" x2="866" y2="550" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="550" x2="902" y2="550" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,569 866,583 880,576" fill="#188038"/>
+<line x1="882" y1="569" x2="882" y2="583" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="576" x2="866" y2="576" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="576" x2="902" y2="576" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,595 866,609 880,602" fill="#1a73e8"/>
+<line x1="882" y1="595" x2="882" y2="609" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="602" x2="866" y2="602" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="602" x2="902" y2="602" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="550" x2="902" y2="602" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="576.0" x2="934" y2="576.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="936" y="566.0" width="40" height="20" rx="10" fill="#202124"/>
+<text x="956.0" y="580.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="986" y="581.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">YSF</text>
+<rect x="850" y="612" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
+<polygon points="866,621 866,635 880,628" fill="#d93025"/>
+<line x1="882" y1="621" x2="882" y2="635" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="628" x2="866" y2="628" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="628" x2="902" y2="628" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,647 866,661 880,654" fill="#188038"/>
+<line x1="882" y1="647" x2="882" y2="661" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="654" x2="866" y2="654" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="654" x2="902" y2="654" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,673 866,687 880,680" fill="#1a73e8"/>
+<line x1="882" y1="673" x2="882" y2="687" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="680" x2="866" y2="680" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="680" x2="902" y2="680" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="628" x2="902" y2="680" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="654.0" x2="934" y2="654.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="936" y="644.0" width="40" height="20" rx="10" fill="#202124"/>
+<text x="956.0" y="658.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="986" y="659.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">P25</text>
+<rect x="850" y="690" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
+<polygon points="866,699 866,713 880,706" fill="#d93025"/>
+<line x1="882" y1="699" x2="882" y2="713" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="706" x2="866" y2="706" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="706" x2="902" y2="706" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,725 866,739 880,732" fill="#188038"/>
+<line x1="882" y1="725" x2="882" y2="739" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="732" x2="866" y2="732" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="732" x2="902" y2="732" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="866,751 866,765 880,758" fill="#1a73e8"/>
+<line x1="882" y1="751" x2="882" y2="765" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="758" x2="866" y2="758" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="882" y1="758" x2="902" y2="758" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="706" x2="902" y2="758" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="902" y1="732.0" x2="934" y2="732.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="936" y="722.0" width="40" height="20" rx="10" fill="#202124"/>
+<text x="956.0" y="736.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="986" y="737.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">NXDN</text>
+<rect x="1130" y="330" width="230" height="308" rx="10" fill="#fef7e0" stroke="#e37400" stroke-width="1.5"/>
+<text x="1245" y="352" font-size="14" text-anchor="middle" font-weight="bold" fill="#202124">Module B</text>
+<text x="1245" y="370" font-size="12" text-anchor="middle" font-weight="normal" fill="#5f6368">MCP23017 — I2C 0x22, on 5 V</text>
+<text x="1142" y="398" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">VCC</text>
+<line x1="1120" y1="394" x2="1130" y2="394" stroke="#b00020" stroke-width="2" stroke-linecap="round"/>
+<rect x="1086" y="384" width="32" height="20" rx="10" fill="#b00020"/>
+<text x="1102.0" y="398.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
+<text x="1142" y="420" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">GND</text>
+<line x1="1120" y1="416" x2="1130" y2="416" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1078" y="406" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1098.0" y="420.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1142" y="442" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">SDA</text>
+<line x1="1120" y1="438" x2="1130" y2="438" stroke="#00838f" stroke-width="2" stroke-linecap="round"/>
+<rect x="1054" y="428" width="64" height="20" rx="10" fill="#00838f"/>
+<text x="1086.0" y="442.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">SDA 5V</text>
+<text x="1142" y="464" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">SCL</text>
+<line x1="1120" y1="460" x2="1130" y2="460" stroke="#006064" stroke-width="2" stroke-linecap="round"/>
+<rect x="1054" y="450" width="64" height="20" rx="10" fill="#006064"/>
+<text x="1086.0" y="464.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">SCL 5V</text>
+<text x="1142" y="486" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">A0</text>
+<line x1="1120" y1="482" x2="1130" y2="482" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1078" y="472" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1098.0" y="486.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1142" y="508" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">A1</text>
+<line x1="1120" y1="504" x2="1130" y2="504" stroke="#b00020" stroke-width="2" stroke-linecap="round"/>
+<rect x="1086" y="494" width="32" height="20" rx="10" fill="#b00020"/>
+<text x="1102.0" y="508.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
+<text x="1142" y="530" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">A2</text>
+<line x1="1120" y1="526" x2="1130" y2="526" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1078" y="516" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1098.0" y="530.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1142" y="552" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">RST</text>
+<line x1="1120" y1="548" x2="1130" y2="548" stroke="#b00020" stroke-width="2" stroke-linecap="round"/>
+<rect x="1086" y="538" width="32" height="20" rx="10" fill="#b00020"/>
+<text x="1102.0" y="552.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
+<text x="1348" y="398" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA0</text>
+<line x1="1360" y1="394" x2="1392" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="1392" y="388" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="1409" y="385" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="1426" y1="394" x2="1460" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="1348" y="424" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA1</text>
+<line x1="1360" y1="420" x2="1392" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<rect x="1392" y="414" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="1409" y="411" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="1426" y1="420" x2="1460" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<text x="1348" y="450" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA2</text>
+<line x1="1360" y1="446" x2="1392" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<rect x="1392" y="440" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="1409" y="437" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="1426" y1="446" x2="1460" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="1348" y="476" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA3</text>
+<line x1="1360" y1="472" x2="1392" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="1392" y="466" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="1409" y="463" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="1426" y1="472" x2="1460" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="1348" y="502" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA4</text>
+<line x1="1360" y1="498" x2="1392" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<rect x="1392" y="492" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="1409" y="489" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="1426" y1="498" x2="1460" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<text x="1348" y="528" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA5</text>
+<line x1="1360" y1="524" x2="1392" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<rect x="1392" y="518" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<text x="1409" y="515" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="1426" y1="524" x2="1460" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="1348" y="554" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA6</text>
+<text x="1380" y="554" font-size="11" text-anchor="start" font-weight="normal" fill="#9aa0a6" font-style="italic">spare</text>
+<text x="1348" y="580" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA7</text>
+<text x="1380" y="580" font-size="11" text-anchor="start" font-weight="normal" fill="#9aa0a6" font-style="italic">spare</text>
+<text x="1348" y="606" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB0–7</text>
+<text x="1380" y="606" font-size="11" text-anchor="start" font-weight="normal" fill="#9aa0a6" font-style="italic">spare</text>
+<rect x="1460" y="378" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
+<polygon points="1476,387 1476,401 1490,394" fill="#d93025"/>
+<line x1="1492" y1="387" x2="1492" y2="401" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="394" x2="1476" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="1492" y1="394" x2="1512" y2="394" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="1476,413 1476,427 1490,420" fill="#188038"/>
+<line x1="1492" y1="413" x2="1492" y2="427" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="420" x2="1476" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="1492" y1="420" x2="1512" y2="420" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="1476,439 1476,453 1490,446" fill="#1a73e8"/>
+<line x1="1492" y1="439" x2="1492" y2="453" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="446" x2="1476" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1492" y1="446" x2="1512" y2="446" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="1512" y1="394" x2="1512" y2="446" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="1512" y1="420.0" x2="1544" y2="420.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1546" y="410.0" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1566.0" y="424.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1596" y="425.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">M17</text>
+<rect x="1460" y="456" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
+<polygon points="1476,465 1476,479 1490,472" fill="#d93025"/>
+<line x1="1492" y1="465" x2="1492" y2="479" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="472" x2="1476" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="1492" y1="472" x2="1512" y2="472" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="1476,491 1476,505 1490,498" fill="#188038"/>
+<line x1="1492" y1="491" x2="1492" y2="505" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="498" x2="1476" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="1492" y1="498" x2="1512" y2="498" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<polygon points="1476,517 1476,531 1490,524" fill="#1a73e8"/>
+<line x1="1492" y1="517" x2="1492" y2="531" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="524" x2="1476" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1492" y1="524" x2="1512" y2="524" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="1512" y1="472" x2="1512" y2="524" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
+<line x1="1512" y1="498.0" x2="1544" y2="498.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1546" y="488.0" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1566.0" y="502.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1596" y="503.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">Status</text>
+<text x="1380" y="660" font-size="12" text-anchor="start" font-weight="normal" fill="#5f6368">Status LED: red = TX, green = RX,</text>
+<text x="1380" y="676" font-size="12" text-anchor="start" font-weight="normal" fill="#5f6368">blue = network fault / new page</text>
+<text x="1380" y="702" font-size="12" text-anchor="start" font-weight="normal" fill="#5f6368">Mode LEDs: green = RX on, red = TX mode,</text>
+<text x="1380" y="718" font-size="12" text-anchor="start" font-weight="normal" fill="#5f6368">yellow = both, blue = call on air</text>
+<text x="1380" y="744" font-size="12" text-anchor="start" font-weight="normal" fill="#5f6368" font-style="italic">Common-cathode LEDs (long leg to GND).</text>
+<text x="1380" y="760" font-size="12" text-anchor="start" font-weight="normal" fill="#5f6368" font-style="italic">Resistors: see wiring.md.</text>
+<rect x="530" y="960" width="200" height="160" rx="10" fill="#f3e8fd" stroke="#8430ce" stroke-width="1.5"/>
+<text x="630" y="982" font-size="14" text-anchor="middle" font-weight="bold" fill="#202124">KY-040: CHANNEL</text>
+<circle cx="680" cy="1055" r="30" fill="#e0c7f7" stroke="#8430ce" stroke-width="2"/>
+<circle cx="680" cy="1055" r="12" fill="#8430ce"/>
+<text x="542" y="1008" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">CLK</text>
+<line x1="520" y1="1004" x2="530" y2="1004" stroke="#8430ce" stroke-width="2" stroke-linecap="round"/>
+<rect x="454" y="994" width="64" height="20" rx="10" fill="#8430ce"/>
+<text x="486.0" y="1008.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO17</text>
+<text x="542" y="1032" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">DT</text>
+<line x1="520" y1="1028" x2="530" y2="1028" stroke="#8430ce" stroke-width="2" stroke-linecap="round"/>
+<rect x="454" y="1018" width="64" height="20" rx="10" fill="#8430ce"/>
+<text x="486.0" y="1032.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO27</text>
+<text x="542" y="1056" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">SW</text>
+<line x1="520" y1="1052" x2="530" y2="1052" stroke="#8430ce" stroke-width="2" stroke-linecap="round"/>
+<rect x="454" y="1042" width="64" height="20" rx="10" fill="#8430ce"/>
+<text x="486.0" y="1056.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO22</text>
+<text x="542" y="1080" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">+</text>
+<line x1="520" y1="1076" x2="530" y2="1076" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="470" y="1066" width="48" height="20" rx="10" fill="#d93025"/>
+<text x="494.0" y="1080.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">3.3V</text>
+<text x="542" y="1104" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">GND</text>
+<line x1="520" y1="1100" x2="530" y2="1100" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="478" y="1090" width="40" height="20" rx="10" fill="#202124"/>
+<text x="498.0" y="1104.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<rect x="850" y="960" width="200" height="160" rx="10" fill="#f3e8fd" stroke="#8430ce" stroke-width="1.5"/>
+<text x="950" y="982" font-size="14" text-anchor="middle" font-weight="bold" fill="#202124">KY-040: VOLUME</text>
+<circle cx="1000" cy="1055" r="30" fill="#e0c7f7" stroke="#8430ce" stroke-width="2"/>
+<circle cx="1000" cy="1055" r="12" fill="#8430ce"/>
+<text x="862" y="1008" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">CLK</text>
+<line x1="840" y1="1004" x2="850" y2="1004" stroke="#8430ce" stroke-width="2" stroke-linecap="round"/>
+<rect x="774" y="994" width="64" height="20" rx="10" fill="#8430ce"/>
+<text x="806.0" y="1008.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO20</text>
+<text x="862" y="1032" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">DT</text>
+<line x1="840" y1="1028" x2="850" y2="1028" stroke="#8430ce" stroke-width="2" stroke-linecap="round"/>
+<rect x="774" y="1018" width="64" height="20" rx="10" fill="#8430ce"/>
+<text x="806.0" y="1032.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO21</text>
+<text x="862" y="1056" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">SW</text>
+<line x1="840" y1="1052" x2="850" y2="1052" stroke="#8430ce" stroke-width="2" stroke-linecap="round"/>
+<rect x="774" y="1042" width="64" height="20" rx="10" fill="#8430ce"/>
+<text x="806.0" y="1056.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO18</text>
+<text x="862" y="1080" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">+</text>
+<line x1="840" y1="1076" x2="850" y2="1076" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<rect x="790" y="1066" width="48" height="20" rx="10" fill="#d93025"/>
+<text x="814.0" y="1080.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">3.3V</text>
+<text x="862" y="1104" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">GND</text>
+<line x1="840" y1="1100" x2="850" y2="1100" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="798" y="1090" width="40" height="20" rx="10" fill="#202124"/>
+<text x="818.0" y="1104.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="630" y="1142" font-size="12" text-anchor="middle" font-weight="normal" fill="#5f6368">turn = reflector / talkgroup, push = link</text>
+<text x="950" y="1142" font-size="12" text-anchor="middle" font-weight="normal" fill="#5f6368">turn = volume, push = mute</text>
+<rect x="1090" y="890" width="480" height="300" rx="10" fill="#e6f4ea" stroke="#188038" stroke-width="1.5"/>
+<text x="1330" y="914" font-size="14" text-anchor="middle" font-weight="bold" fill="#202124">Push buttons (to GND, no resistors)</text>
+<rect x="1124" y="940" width="56" height="20" rx="10" fill="#188038"/>
+<text x="1152.0" y="954.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO5</text>
+<line x1="1180" y1="950" x2="1210" y2="950" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<circle cx="1213" cy="950" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<circle cx="1253" cy="950" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<line x1="1213" y1="941" x2="1253" y2="941" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1233" y1="941" x2="1233" y2="933" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1226" y1="933" x2="1240" y2="933" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1256" y1="950" x2="1284" y2="950" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1284" y="940" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1304.0" y="954.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1233" y="970" font-size="12" text-anchor="middle" font-weight="bold" fill="#202124">DMR</text>
+<rect x="1364" y="940" width="56" height="20" rx="10" fill="#188038"/>
+<text x="1392.0" y="954.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO6</text>
+<line x1="1420" y1="950" x2="1450" y2="950" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<circle cx="1453" cy="950" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<circle cx="1493" cy="950" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<line x1="1453" y1="941" x2="1493" y2="941" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1473" y1="941" x2="1473" y2="933" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1466" y1="933" x2="1480" y2="933" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1496" y1="950" x2="1524" y2="950" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1524" y="940" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1544.0" y="954.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1473" y="970" font-size="12" text-anchor="middle" font-weight="bold" fill="#202124">D-Star</text>
+<rect x="1116" y="996" width="64" height="20" rx="10" fill="#188038"/>
+<text x="1148.0" y="1010.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO12</text>
+<line x1="1180" y1="1006" x2="1210" y2="1006" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<circle cx="1213" cy="1006" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<circle cx="1253" cy="1006" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<line x1="1213" y1="997" x2="1253" y2="997" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1233" y1="997" x2="1233" y2="989" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1226" y1="989" x2="1240" y2="989" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1256" y1="1006" x2="1284" y2="1006" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1284" y="996" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1304.0" y="1010.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1233" y="1026" font-size="12" text-anchor="middle" font-weight="bold" fill="#202124">YSF</text>
+<rect x="1356" y="996" width="64" height="20" rx="10" fill="#188038"/>
+<text x="1388.0" y="1010.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO13</text>
+<line x1="1420" y1="1006" x2="1450" y2="1006" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<circle cx="1453" cy="1006" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<circle cx="1493" cy="1006" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<line x1="1453" y1="997" x2="1493" y2="997" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1473" y1="997" x2="1473" y2="989" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1466" y1="989" x2="1480" y2="989" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1496" y1="1006" x2="1524" y2="1006" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1524" y="996" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1544.0" y="1010.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1473" y="1026" font-size="12" text-anchor="middle" font-weight="bold" fill="#202124">P25</text>
+<rect x="1116" y="1052" width="64" height="20" rx="10" fill="#188038"/>
+<text x="1148.0" y="1066.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO19</text>
+<line x1="1180" y1="1062" x2="1210" y2="1062" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<circle cx="1213" cy="1062" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<circle cx="1253" cy="1062" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<line x1="1213" y1="1053" x2="1253" y2="1053" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1233" y1="1053" x2="1233" y2="1045" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1226" y1="1045" x2="1240" y2="1045" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1256" y1="1062" x2="1284" y2="1062" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1284" y="1052" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1304.0" y="1066.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1233" y="1082" font-size="12" text-anchor="middle" font-weight="bold" fill="#202124">NXDN</text>
+<rect x="1356" y="1052" width="64" height="20" rx="10" fill="#188038"/>
+<text x="1388.0" y="1066.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO16</text>
+<line x1="1420" y1="1062" x2="1450" y2="1062" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<circle cx="1453" cy="1062" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<circle cx="1493" cy="1062" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<line x1="1453" y1="1053" x2="1493" y2="1053" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1473" y1="1053" x2="1473" y2="1045" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1466" y1="1045" x2="1480" y2="1045" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1496" y1="1062" x2="1524" y2="1062" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1524" y="1052" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1544.0" y="1066.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1473" y="1082" font-size="12" text-anchor="middle" font-weight="bold" fill="#202124">M17</text>
+<rect x="1116" y="1108" width="64" height="20" rx="10" fill="#188038"/>
+<text x="1148.0" y="1122.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO26</text>
+<line x1="1180" y1="1118" x2="1210" y2="1118" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<circle cx="1213" cy="1118" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<circle cx="1253" cy="1118" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<line x1="1213" y1="1109" x2="1253" y2="1109" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1233" y1="1109" x2="1233" y2="1101" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1226" y1="1101" x2="1240" y2="1101" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1256" y1="1118" x2="1284" y2="1118" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1284" y="1108" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1304.0" y="1122.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1233" y="1138" font-size="12" text-anchor="middle" font-weight="bold" fill="#202124">Menu</text>
+<rect x="1356" y="1108" width="64" height="20" rx="10" fill="#e8710a"/>
+<text x="1388.0" y="1122.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO23</text>
+<line x1="1420" y1="1118" x2="1450" y2="1118" stroke="#e8710a" stroke-width="2" stroke-linecap="round"/>
+<circle cx="1453" cy="1118" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<circle cx="1493" cy="1118" r="3" fill="#fff" stroke="#202124" stroke-width="1.5"/>
+<line x1="1453" y1="1109" x2="1493" y2="1109" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1473" y1="1109" x2="1473" y2="1101" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1466" y1="1101" x2="1480" y2="1101" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<line x1="1496" y1="1118" x2="1524" y2="1118" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
+<rect x="1524" y="1108" width="40" height="20" rx="10" fill="#202124"/>
+<text x="1544.0" y="1122.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
+<text x="1473" y="1138" font-size="12" text-anchor="middle" font-weight="bold" fill="#202124">PTT</text>
+<text x="1330" y="1180" font-size="12" text-anchor="middle" font-weight="normal" fill="#5f6368">Optional PTT jack: tip → GPIO23, sleeve → GND</text>
+</svg>

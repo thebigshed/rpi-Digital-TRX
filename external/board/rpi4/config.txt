@@ -1,0 +1,18 @@
+# Raspberry Pi 4 firmware settings for rpi-Digital-TRX
+start_file=start4.elf
+fixup_file=fixup4.dat
+kernel=Image
+arm_64bit=1
+disable_overscan=1
+gpu_mem_1024=64
+
+# The AMBE board (DV3000) uses the main serial port, /dev/ttyAMA0 on GPIO 14/15.
+# Move Bluetooth off it, and keep the console off it (see cmdline.txt).
+enable_uart=1
+dtoverlay=disable-bt
+
+# The LCD plate is on I2C bus 1 (GPIO 2/3).
+dtparam=i2c_arm=on
+
+# Onboard audio stays on; the app uses the USB headset.
+dtparam=audio=on

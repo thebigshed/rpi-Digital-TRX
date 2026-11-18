@@ -1,0 +1,42 @@
+#!/bin/sh
+# The radio, driving the LCD plate. Restarted if it stops.
+LOG=/var/log/dtrx.log
+run() {
+    export HOME=/root
+    export LANG=C.UTF-8
+    export PULSE_SERVER=unix:/var/run/pulse/native
+    # Make the USB headset PulseAudio's default speaker and microphone.
+    for i in 1 2 3 4 5 6 7 8 9 10; do
+        SINK=$(pactl list short sinks 2>/dev/null | awk '/usb/ {print $2; exit}')
+        [ -n "$SINK" ] && break
+        sleep 1
+    done
+    SRC=$(pactl list short sources 2>/dev/null | awk '/usb/ && !/monitor/ {print $2; exit}')
+    [ -n "$SINK" ] && pactl set-default-sink "$SINK"
+    [ -n "$SRC" ] && pactl set-default-source "$SRC"
+    while true; do
+        /usr/bin/digital-transceiver --ambe /dev/ttyAMA0 >>"$LOG" 2>&1
+        echo "$(date) digital-transceiver exited ($?), restarting" >>"$LOG"
+        sleep 3
+    done
+}
+case "$1" in
+start)
+    printf "Starting Digital Transceiver: "
+    run </dev/null >/dev/null 2>&1 &
+    echo $! > /var/run/dtrx.pid
+    echo "OK"
+    ;;
+stop)
+    # Stop the restart loop, then the app: on SIGTERM it unlinks from the networks and saves
+    # its settings, so give it a moment before the network goes down.
+    [ -f /var/run/dtrx.pid ] && kill "$(cat /var/run/dtrx.pid)" 2>/dev/null
+    killall digital-transceiver 2>/dev/null
+    for i in 1 2 3 4 5 6 7 8 9 10; do
+        pidof digital-transceiver >/dev/null || break
+        sleep 0.3
+    done
+    rm -f /var/run/dtrx.pid
+    ;;
+esac
+exit 0

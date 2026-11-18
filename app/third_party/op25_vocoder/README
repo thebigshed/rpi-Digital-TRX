@@ -1,0 +1,5 @@
+Voice encoders from OP25 (https://github.com/boatbod/op25, gr-op25_repeater/lib),
+copied from OP25 plus op25voc.cc/.h (C wrapper). One change: ambe_encoder.cc
+quantises the D-Star gain predictively, matching OP25's own decoder and mbelib
+(upstream coded it as absolute, which pins the decoded gain at its maximum). OP25 is GPLv3-or-later:
+see the licence header in each source file.

@@ -1,0 +1,11 @@
+config BR2_PACKAGE_DIGITAL_TRANSCEIVER
+	bool "digital-transceiver"
+	depends on BR2_PACKAGE_QT6
+	select BR2_PACKAGE_QT6BASE
+	select BR2_PACKAGE_QT6BASE_NETWORK
+	select BR2_PACKAGE_CODEC2
+	select BR2_PACKAGE_ALSA_LIB
+	help
+	  The rpi-Digital-TRX radio app (app/ in this project): a network
+	  radio for DMR, D-Star, YSF, P25, NXDN, M17 and DAPNET, driving
+	  the LCD plate. Qt Core and Network only; no GUI.

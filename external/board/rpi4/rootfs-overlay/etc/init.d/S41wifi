@@ -1,0 +1,16 @@
+#!/bin/sh
+# Wi-Fi from /etc/wpa_supplicant.conf (copied from the boot partition by S05bootconfig).
+case "$1" in
+start)
+    [ -f /etc/wpa_supplicant.conf ] || { echo "wifi: no wpa_supplicant.conf on the boot partition"; exit 0; }
+    printf "Starting Wi-Fi: "
+    for i in 1 2 3 4 5 6 7 8 9 10; do [ -e /sys/class/net/wlan0 ] && break; sleep 1; done
+    wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf -P /var/run/wpa_supplicant.pid && \
+        udhcpc -b -i wlan0 -p /var/run/udhcpc.wlan0.pid >/dev/null 2>&1 && echo "OK" || echo "FAIL"
+    ;;
+stop)
+    [ -f /var/run/udhcpc.wlan0.pid ] && kill "$(cat /var/run/udhcpc.wlan0.pid)" 2>/dev/null
+    [ -f /var/run/wpa_supplicant.pid ] && kill "$(cat /var/run/wpa_supplicant.pid)" 2>/dev/null
+    ;;
+esac
+exit 0

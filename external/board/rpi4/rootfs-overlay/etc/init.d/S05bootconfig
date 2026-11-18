@@ -1,0 +1,25 @@
+#!/bin/sh
+# Copy the user's files from the SD card's boot partition (FAT, editable on any PC):
+#   wpa_supplicant.conf  Wi-Fi network(s)             -> /etc/wpa_supplicant.conf
+#   settings.json        Digital Transceiver settings -> the app's settings (once; the file is
+#                        then renamed settings.json.applied so later changes made on the
+#                        radio are kept)
+#   authorized_keys      SSH public keys for root     -> /root/.ssh/authorized_keys
+case "$1" in
+start)
+    grep -q " /boot " /proc/mounts || mount /boot 2>/dev/null
+    [ -f /boot/wpa_supplicant.conf ] && cp /boot/wpa_supplicant.conf /etc/wpa_supplicant.conf
+    CONF=/root/.config/digital-transceiver/digital-transceiver
+    if [ -f /boot/settings.json ]; then
+        mkdir -p "$CONF"
+        cp /boot/settings.json "$CONF/settings.json" && mv /boot/settings.json /boot/settings.json.applied
+    fi
+    if [ -f /boot/authorized_keys ]; then
+        mkdir -p /root/.ssh && chmod 700 /root/.ssh
+        cp /boot/authorized_keys /root/.ssh/authorized_keys && chmod 600 /root/.ssh/authorized_keys
+    fi
+    # The LCD plate needs the I2C device node.
+    modprobe i2c-dev 2>/dev/null
+    ;;
+esac
+exit 0

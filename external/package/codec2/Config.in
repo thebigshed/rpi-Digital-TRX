@@ -1,0 +1,6 @@
+config BR2_PACKAGE_CODEC2
+	bool "codec2"
+	help
+	  Codec2 low bit rate speech codec (used by M17).
+
+	  https://github.com/drowe67/codec2
