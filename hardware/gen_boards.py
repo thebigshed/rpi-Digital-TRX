@@ -683,9 +683,13 @@ def write_pcb(b, sym_uuid, sheet):
         z = pcbnew.ZONE(board)
         z.SetLayer(layer)
         z.SetNet(nets['GND'])
-        z.SetLocalClearance(mm(0.4))
+        z.SetLocalClearance(mm(0.25))
         z.SetMinThickness(mm(0.25))
         z.SetPadConnection(pcbnew.ZONE_CONNECTION_THERMAL)
+        # tight enough for spokes to reach header pins that have tracks running past them
+        z.SetThermalReliefGap(mm(0.25))
+        z.SetThermalReliefSpokeWidth(mm(0.4))
+        z.SetIslandRemovalMode(pcbnew.ISLAND_REMOVAL_MODE_ALWAYS)
         ol = z.Outline()
         ol.NewOutline()
         for x, y in ((0.5, 0.5), (W - 0.5, 0.5), (W - 0.5, H - 0.5), (0.5, H - 0.5)):

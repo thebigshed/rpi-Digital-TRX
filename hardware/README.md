@@ -11,9 +11,9 @@ Open `dtrx-main/dtrx-main.kicad_pro` or `dtrx-panel/dtrx-panel.kicad_pro` in KiC
 schematic, a routed 2-layer PCB with a ground pour on both sides, and a PDF of the schematic.
 
 Both boards were autorouted with Freerouting by `route.py`, ground included, so no pin depends
-on the pour. DRC shows every connection made, the PCB matching its schematic and no silkscreen
-problems. The only warnings left are a few ground pins whose thermal relief has only one spoke
-to the pour; they're joined by tracks as well, so it doesn't matter.
+on the pour. DRC is clean on both boards: every connection made, the PCB matching its schematic,
+no warnings. Where tracks box a ground pin in so the pour's thermal spokes can't reach it,
+`route.py` connects that one pin solidly to the pour instead (a handful of header pins).
 
 The design matches the app as it is. Buttons and encoders go to the same Pi GPIO pins, the LED
 drivers sit at 0x21 and 0x22, and the LCD keeps its own I2C backpack (0x27 or 0x3F). So no

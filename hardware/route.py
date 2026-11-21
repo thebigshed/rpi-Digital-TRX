@@ -8,6 +8,7 @@ found at $FREEROUTING_JAR or ~/.local/share/freerouting/freerouting-<version>.ja
 It writes the routed tracks into each .kicad_pcb, so run it after gen_boards.py.
 """
 import glob
+import json
 import os
 import re
 import subprocess
@@ -49,7 +50,38 @@ def route(name, passes=100):
             sys.exit(f'{name}: SES import failed')
     pcbnew.ZONE_FILLER(board).Fill(board.Zones())
     board.Save(pcb)
+    solid_starved_pads(pcb)
     print('routed', name)
+
+
+def solid_starved_pads(pcb):
+    """A ground pin with tracks on every side has no room for thermal spokes. Those pins are
+    already joined by tracks, so connect just them solidly to the pour and fill again."""
+    for _ in range(3):
+        with tempfile.TemporaryDirectory() as tmp:
+            rpt = os.path.join(tmp, 'drc.json')
+            subprocess.run(['kicad-cli', 'pcb', 'drc', '--format', 'json', '-o', rpt, pcb],
+                           check=True, stdout=subprocess.DEVNULL)
+            with open(rpt) as f:
+                report = json.load(f)
+        starved = set()
+        for v in report.get('violations', []):
+            if v.get('type') != 'starved_thermal':
+                continue
+            for item in v.get('items', []):
+                m = re.search(r'pad (\S+) \[.*\] of (\S+)', item.get('description', ''))
+                if m:
+                    starved.add((m.group(2), m.group(1)))
+        if not starved:
+            return
+        board = pcbnew.LoadBoard(pcb)
+        for ref, num in sorted(starved):
+            for pad in board.FindFootprintByReference(ref).Pads():
+                if pad.GetNumber() == num:
+                    pad.SetLocalZoneConnection(pcbnew.ZONE_CONNECTION_FULL)
+            print(f'  {ref} pin {num}: solid to the ground pour')
+        pcbnew.ZONE_FILLER(board).Fill(board.Zones())
+        board.Save(pcb)
 
 
 if __name__ == '__main__':
