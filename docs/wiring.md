@@ -49,7 +49,7 @@ panel is in [`wiring.svg`](wiring.svg).
 ## Getting at the pins
 
 The DV3000 sits on the first 26 header pins, so those pins are covered. The panel needs some of
-them (3.3 V, 5 V, I2C, GPIO 17, 18, 22, 23 and 27). Use either of these:
+them (3.3 V, 5 V, I2C, GPIO 18, 22, 23, 24 and 27). Use either of these:
 
 - **A 40-pin GPIO splitter** ("1 to 2" or "1 to 3" expansion board) on the Pi. The DV3000 plugs
   into one side, and the panel wires go to the other. This is the easiest option.
@@ -76,7 +76,8 @@ and both LED modules connect to that bus, never straight to the Pi's pins 3 and 
 resistors go to 5 V, which would damage the Pi.
 | 7 | GPIO 4 | **DV3000 reset: don't use** |
 | 8, 10 | GPIO 14, 15 | **DV3000 serial: don't use** |
-| 11 | GPIO 17 | **Channel** encoder CLK |
+| 11 | GPIO 17 | **Used by the DV3000** (it holds this pin low): don't use |
+| 18 | GPIO 24 | **Channel** encoder CLK |
 | 13 | GPIO 27 | **Channel** encoder DT |
 | 15 | GPIO 22 | **Channel** encoder SW (push) |
 | 12 | GPIO 18 | **Volume** encoder SW (push = mute) |
@@ -91,7 +92,7 @@ resistors go to 5 V, which would damage the Pi.
 | 30, 34, 39 | GND | Common ground for all the buttons |
 | 38 | GPIO 20 | **Volume** encoder CLK |
 | 40 | GPIO 21 | **Volume** encoder DT |
-| 18, 22 | GPIO 24, 25 | Spare (e.g. a second PTT or a foot switch later) |
+| 22 | GPIO 25 | Spare (e.g. a second PTT or a foot switch later) |
 
 Every button goes **between its GPIO pin and GND**. No resistors are needed: the Pi's internal
 pull-ups are switched on in software.
@@ -124,39 +125,42 @@ remove them.
 
 ### Module A (0x21): DMR, D-Star, YSF, P25, NXDN
 
+DMR, D-Star and YSF run blue, green, red; P25 and NXDN run red, blue, green, as they are wired on
+the prototype panel.
+
 | Pin | LED | Colour |
 |---|---|---|
-| GPA0 | DMR | Red |
+| GPA0 | DMR | Blue |
 | GPA1 | DMR | Green |
-| GPA2 | DMR | Blue |
-| GPA3 | D-Star | Red |
+| GPA2 | DMR | Red |
+| GPA3 | D-Star | Blue |
 | GPA4 | D-Star | Green |
-| GPA5 | D-Star | Blue |
-| GPA6 | YSF | Red |
+| GPA5 | D-Star | Red |
+| GPA6 | YSF | Blue |
 | GPA7 | YSF | Green |
-| GPB0 | YSF | Blue |
+| GPB0 | YSF | Red |
 | GPB1 | P25 | Red |
-| GPB2 | P25 | Green |
-| GPB3 | P25 | Blue |
+| GPB2 | P25 | Blue |
+| GPB3 | P25 | Green |
 | GPB4 | NXDN | Red |
-| GPB5 | NXDN | Green |
-| GPB6 | NXDN | Blue |
+| GPB5 | NXDN | Blue |
+| GPB6 | NXDN | Green |
 | GPB7 | — | Spare |
 
 ### Module B (0x22): M17 and status
 
 | Pin | LED | Colour |
 |---|---|---|
-| GPA0 | M17 | Red |
+| GPA0 | M17 | Blue |
 | GPA1 | M17 | Green |
-| GPA2 | M17 | Blue |
-| GPA3 | Status | Red (TX) |
+| GPA2 | M17 | Red |
+| GPA3 | Status | Blue (network fault / new page) |
 | GPA4 | Status | Green (RX: a call is being heard) |
-| GPA5 | Status | Blue (network fault / new page) |
+| GPA5 | Status | Red (TX) |
 | GPA6 – GPA7, GPB0 – GPB7 | — | Spare (10 outputs), e.g. a DAPNET/pager LED or a signal-level bar later |
 
-**Without module B**, the M17 and status LEDs can go straight to Pi GPIO pins instead: M17 red,
-green, blue on GPIO 10, 9, 11 (pins 19, 21, 23) and status on GPIO 8, 7, 24 (pins 24, 26, 18),
+**Without module B**, the M17 and status LEDs can go straight to Pi GPIO pins instead: M17 blue,
+green, red on GPIO 10, 9, 11 (pins 19, 21, 23) and status on GPIO 8, 7, 25 (pins 24, 26, 22),
 with the common legs to GND. The Pi's pins give only 3.3 V, so use 220 Ω for red and 100 Ω for
 green and blue there. The radio uses these pins only when
 nothing answers at 0x22; `events.log` says which it found.
@@ -172,14 +176,14 @@ a short leg lights that colour.
 ```
          GPA0           GPA1           GPA2       ← MCP23017 output pins (DMR shown)
            │              │              │
-          470Ω           330Ω           330Ω
+          330Ω           330Ω           470Ω
            │              │              │
         ┌──┴──┐        ┌──┴──┐        ┌──┴──┐     one LED shown; repeat for each
-        │  R  │        │  G  │        │  B  │     (inside one RGB LED: three diodes
+        │  B  │        │  G  │        │  R  │     (inside one RGB LED: three diodes
         └──┬──┘        └──┬──┘        └──┬──┘      sharing the cathode)
-           │ long leg     │              │
+           │              │              │
            ├──────────────┴──────────────┘
-           │
+           │ common (long) leg
           GND
 ```
 
@@ -222,7 +226,7 @@ out a direct connection. A bare display needs 6–7 GPIO pins in 4-bit mode.
 
 | KY-040 pin | **Channel** encoder | **Volume** encoder |
 |---|---|---|
-| CLK | Pin 11 (GPIO 17) | Pin 38 (GPIO 20) |
+| CLK | Pin 18 (GPIO 24) | Pin 38 (GPIO 20) |
 | DT | Pin 13 (GPIO 27) | Pin 40 (GPIO 21) |
 | SW | Pin 15 (GPIO 22) | Pin 12 (GPIO 18) |
 | + | Pin 1 (**3.3 V, not 5 V**) | Pin 1 (**3.3 V, not 5 V**) |
@@ -270,12 +274,12 @@ it again afterwards (`/etc/init.d/S90dtrx start`).
    modules) and **27** or **3f** (the display). It also shows **20** if the Adafruit plate is
    fitted.
 2. **One LED lights:** these commands make port A outputs and drive GPA0 high, which should light
-   DMR red:
+   DMR blue:
    ```
    i2cset -y 1 0x21 0x00 0x00    # IODIRA: all outputs
    i2cset -y 1 0x21 0x14 0x01    # OLATA: GPA0 high
    ```
-   `0x02` lights GPA1 (DMR green), `0x04` GPA2 (DMR blue), and so on; `0x00` turns them all off.
+   `0x02` lights GPA1 (DMR green), `0x04` GPA2 (DMR red), and so on; `0x00` turns them all off.
    Registers 0x01 / 0x15 are the GPB equivalents, and use address 0x22 for module B.
 3. **Buttons and encoders:** `gpiomon -B pull-up gpiochip0 5 6 12 13 19 16 26 23 22 18` prints
    an event for every press and release (a press is a falling edge). For the encoders,

@@ -6,7 +6,7 @@
 //   GPIO  5  6 12 13 19 16   mode buttons: DMR, D-Star, YSF, P25, NXDN, M17
 //   GPIO 26                  Menu / Back
 //   GPIO 23                  PTT (hold to talk)
-//   GPIO 17 / 27, 22         channel encoder CLK / DT, push
+//   GPIO 24 / 27, 22         channel encoder CLK / DT, push (not GPIO 17: the DV3000 holds it low)
 //   GPIO 20 / 21, 18         volume encoder CLK / DT, push
 // Buttons connect their pin to GND.
 #include <QList>

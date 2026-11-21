@@ -35,7 +35,7 @@ dimensions are all near the top of the script.
 | 3 | +3.3 V | 4 | SDA (3.3 V) |
 | 5 | SCL (3.3 V) | 6 | GND |
 | 7 | PTT (GPIO 23) | 8 | Menu (GPIO 26) |
-| 9 | Channel A (GPIO 17) | 10 | Channel B (GPIO 27) |
+| 9 | Channel A (GPIO 24) | 10 | Channel B (GPIO 27) |
 | 11 | Channel push / Link (GPIO 22) | 12 | Volume A (GPIO 20) |
 | 13 | Volume B (GPIO 21) | 14 | Volume push / Mute (GPIO 18) |
 | 15 | DMR (GPIO 5) | 16 | D-Star (GPIO 6) |

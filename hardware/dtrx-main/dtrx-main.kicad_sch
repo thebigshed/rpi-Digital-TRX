@@ -3146,7 +3146,7 @@
 		)
 		(uuid "96b3a329-0333-5fa2-ba66-7559844065af")
 	)
-	(label "ENC_CH_A"
+	(label "GPIO17"
 		(at 48.26 58.42 180)
 		(effects
 			(font
@@ -3216,7 +3216,7 @@
 		)
 		(uuid "0d3e2ea8-7054-580f-8a09-85a3be23a521")
 	)
-	(label "GPIO24"
+	(label "ENC_CH_A"
 		(at 48.26 81.28 180)
 		(effects
 			(font
@@ -3456,7 +3456,7 @@
 		)
 		(uuid "9649301e-857a-59ac-ba58-85b4afb228ea")
 	)
-	(label "ENC_CH_A"
+	(label "GPIO17"
 		(at 132.08 43.18 180)
 		(effects
 			(font
@@ -3616,7 +3616,7 @@
 		)
 		(uuid "1cafb69b-c266-5aa7-9454-3ac0655cd2b4")
 	)
-	(label "GPIO24"
+	(label "ENC_CH_A"
 		(at 144.78 50.8 0)
 		(effects
 			(font

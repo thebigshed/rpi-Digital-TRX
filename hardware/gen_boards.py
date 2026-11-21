@@ -292,9 +292,10 @@ H_FP = 'MountingHole:MountingHole_3.2mm_M3'
 
 def main_board():
     b = Board('dtrx-main', 'Digital TRX: Pi Zero 2 W and AMBE board', (150, 85))
+    # Channel A is on GPIO 24 (pin 18): the DV3000 holds GPIO 17 (pin 11) low.
     pi = {1: '+3V3', 17: '+3V3', 2: '+5V', 4: '+5V', 3: 'SDA', 5: 'SCL', 7: 'AMBE_RESET',
-          8: 'UART_TXD', 10: 'UART_RXD', 11: 'ENC_CH_A', 12: 'BTN_MUTE', 13: 'ENC_CH_B',
-          15: 'BTN_LINK', 16: 'BTN_PTT', 18: 'GPIO24', 19: 'GPIO10', 21: 'GPIO9', 22: 'GPIO25',
+          8: 'UART_TXD', 10: 'UART_RXD', 11: 'GPIO17', 12: 'BTN_MUTE', 13: 'ENC_CH_B',
+          15: 'BTN_LINK', 16: 'BTN_PTT', 18: 'ENC_CH_A', 19: 'GPIO10', 21: 'GPIO9', 22: 'GPIO25',
           23: 'GPIO11', 24: 'GPIO8', 26: 'GPIO7', 29: 'BTN_DMR', 31: 'BTN_DSTAR', 32: 'BTN_YSF',
           33: 'BTN_P25', 35: 'BTN_NXDN', 36: 'BTN_M17', 37: 'BTN_MENU', 38: 'ENC_VOL_A',
           40: 'ENC_VOL_B'}
@@ -342,12 +343,13 @@ def panel_board():
     b.add('R2', 'Device:R', '4k7', R_FP, {1: 'SCL5', 2: '+5V'}, back=True)
 
     # LED drivers: module A at 0x21, module B at 0x22 (app/src/LedPanel.cpp)
-    a_pins = {'GPA0': 'DMR_R', 'GPA1': 'DMR_G', 'GPA2': 'DMR_B', 'GPA3': 'DSTAR_R',
-              'GPA4': 'DSTAR_G', 'GPA5': 'DSTAR_B', 'GPA6': 'YSF_R', 'GPA7': 'YSF_G',
-              'GPB0': 'YSF_B', 'GPB1': 'P25_R', 'GPB2': 'P25_G', 'GPB3': 'P25_B',
-              'GPB4': 'NXDN_R', 'GPB5': 'NXDN_G', 'GPB6': 'NXDN_B'}
-    b_pins = {'GPA0': 'M17_R', 'GPA1': 'M17_G', 'GPA2': 'M17_B', 'GPA3': 'STATUS_R',
-              'GPA4': 'STATUS_G', 'GPA5': 'STATUS_B'}
+    # each LED's pins run blue, green, red (as wired on the prototype panel)
+    a_pins = {'GPA0': 'DMR_B', 'GPA1': 'DMR_G', 'GPA2': 'DMR_R', 'GPA3': 'DSTAR_B',
+              'GPA4': 'DSTAR_G', 'GPA5': 'DSTAR_R', 'GPA6': 'YSF_B', 'GPA7': 'YSF_G',
+              'GPB0': 'YSF_R', 'GPB1': 'P25_R', 'GPB2': 'P25_B', 'GPB3': 'P25_G',
+              'GPB4': 'NXDN_R', 'GPB5': 'NXDN_B', 'GPB6': 'NXDN_G'}
+    b_pins = {'GPA0': 'M17_B', 'GPA1': 'M17_G', 'GPA2': 'M17_R', 'GPA3': 'STATUS_B',
+              'GPA4': 'STATUS_G', 'GPA5': 'STATUS_R'}
     mcp = flat_symbol('Interface_Expansion', 'MCP23017_SP')
     num = {name: n for n, name, *_ in sym_pins(mcp)}
 

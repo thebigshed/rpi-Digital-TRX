@@ -17,7 +17,8 @@ constexpr unsigned kDebounceUs = 10000;
 
 GpioPanel::GpioPanel(QObject *parent) : QObject(parent)
 {
-    encoders_ = {{FrontPanel::Knob::Tune, 17, 27}, {FrontPanel::Knob::Volume, 20, 21}};
+    // Channel CLK is on GPIO 24, not 17: the DV3000 holds GPIO 17 (header pin 11) low.
+    encoders_ = {{FrontPanel::Knob::Tune, 24, 27}, {FrontPanel::Knob::Volume, 20, 21}};
 }
 
 GpioPanel::~GpioPanel()

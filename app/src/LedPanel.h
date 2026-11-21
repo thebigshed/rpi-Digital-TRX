@@ -5,9 +5,10 @@
 //   module B, MCP23017 at 0x22   M17 GPA0-2, status GPA3-5
 //
 // Without module B, the M17 and status LEDs can be wired to Pi GPIO instead (M17 GPIO 10 / 9 / 11,
-// status GPIO 8 / 7 / 24); they are used only if module B doesn't answer.
+// status GPIO 8 / 7 / 25); they are used only if module B doesn't answer.
 //
-// Each LED's legs are red, green, blue in that order. A high output lights a colour.
+// Each LED's three pins are blue, green, red in that order, except P25 and NXDN, which are red,
+// blue, green (GPB1 / GPB4 red). A high output lights a colour.
 #include "FrontPanel.h"
 
 #include <QString>

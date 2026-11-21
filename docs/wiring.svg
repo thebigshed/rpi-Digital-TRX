@@ -34,9 +34,9 @@
 <circle cx="240" cy="232" r="9" fill="#9aa0a6" stroke="#202124" stroke-width="1"/>
 <text x="240" y="236" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">10</text>
 <text x="256" y="236" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 15 — DV3000 RX</text>
-<circle cx="210" cy="258" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
+<circle cx="210" cy="258" r="9" fill="#9aa0a6" stroke="#202124" stroke-width="1"/>
 <text x="210" y="262" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">11</text>
-<text x="194" y="262" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 17 CH-CLK</text>
+<text x="194" y="262" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">GPIO 17 — DV3000 uses</text>
 <circle cx="240" cy="258" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
 <text x="240" y="262" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">12</text>
 <text x="256" y="262" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 18 VOL-SW</text>
@@ -55,9 +55,9 @@
 <circle cx="210" cy="336" r="9" fill="#d93025" stroke="#202124" stroke-width="1"/>
 <text x="210" y="340" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">17</text>
 <text x="194" y="340" font-size="12" text-anchor="end" font-weight="normal" fill="#202124">3.3 V</text>
-<circle cx="240" cy="336" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
-<text x="240" y="340" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">18</text>
-<text x="256" y="340" font-size="12" text-anchor="start" font-weight="normal" fill="#9aa0a6">GPIO 24 spare</text>
+<circle cx="240" cy="336" r="9" fill="#8430ce" stroke="#202124" stroke-width="1"/>
+<text x="240" y="340" font-size="9" text-anchor="middle" font-weight="bold" fill="#fff">18</text>
+<text x="256" y="340" font-size="12" text-anchor="start" font-weight="normal" fill="#202124">GPIO 24 CH-CLK</text>
 <circle cx="210" cy="362" r="9" fill="#dadce0" stroke="#202124" stroke-width="1"/>
 <text x="210" y="366" font-size="9" text-anchor="middle" font-weight="bold" fill="#5f6368">19</text>
 <text x="194" y="366" font-size="12" text-anchor="end" font-weight="normal" fill="#9aa0a6">GPIO 10</text>
@@ -227,94 +227,94 @@
 <rect x="476" y="538" width="32" height="20" rx="10" fill="#b00020"/>
 <text x="492.0" y="552.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
 <text x="738" y="398" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA0</text>
-<line x1="750" y1="394" x2="782" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="394" x2="782" y2="394" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="388" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="799" y="385" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
-<line x1="816" y1="394" x2="850" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="799" y="385" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="394" x2="850" y2="394" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="424" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA1</text>
 <line x1="750" y1="420" x2="782" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="414" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="411" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
 <line x1="816" y1="420" x2="850" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="450" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA2</text>
-<line x1="750" y1="446" x2="782" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="446" x2="782" y2="446" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="440" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="799" y="437" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="816" y1="446" x2="850" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="799" y="437" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="816" y1="446" x2="850" y2="446" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="476" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA3</text>
-<line x1="750" y1="472" x2="782" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="472" x2="782" y2="472" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="466" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="799" y="463" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
-<line x1="816" y1="472" x2="850" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="799" y="463" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="472" x2="850" y2="472" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="502" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA4</text>
 <line x1="750" y1="498" x2="782" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="492" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="489" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
 <line x1="816" y1="498" x2="850" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="528" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA5</text>
-<line x1="750" y1="524" x2="782" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="524" x2="782" y2="524" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="518" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="799" y="515" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="816" y1="524" x2="850" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="799" y="515" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="816" y1="524" x2="850" y2="524" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="554" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA6</text>
-<line x1="750" y1="550" x2="782" y2="550" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="550" x2="782" y2="550" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="544" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="799" y="541" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
-<line x1="816" y1="550" x2="850" y2="550" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="799" y="541" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="816" y1="550" x2="850" y2="550" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="580" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA7</text>
 <line x1="750" y1="576" x2="782" y2="576" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="570" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="567" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
 <line x1="816" y1="576" x2="850" y2="576" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="606" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB0</text>
-<line x1="750" y1="602" x2="782" y2="602" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="602" x2="782" y2="602" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="596" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="799" y="593" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="816" y1="602" x2="850" y2="602" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="799" y="593" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="816" y1="602" x2="850" y2="602" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="632" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB1</text>
 <line x1="750" y1="628" x2="782" y2="628" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="622" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="619" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
 <line x1="816" y1="628" x2="850" y2="628" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="658" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB2</text>
-<line x1="750" y1="654" x2="782" y2="654" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="654" x2="782" y2="654" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="648" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="645" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="816" y1="654" x2="850" y2="654" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="816" y1="654" x2="850" y2="654" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="684" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB3</text>
-<line x1="750" y1="680" x2="782" y2="680" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="680" x2="782" y2="680" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="674" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="671" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="816" y1="680" x2="850" y2="680" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="816" y1="680" x2="850" y2="680" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="710" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB4</text>
 <line x1="750" y1="706" x2="782" y2="706" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="700" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="697" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
 <line x1="816" y1="706" x2="850" y2="706" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="736" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB5</text>
-<line x1="750" y1="732" x2="782" y2="732" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="732" x2="782" y2="732" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="726" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="723" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="816" y1="732" x2="850" y2="732" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="816" y1="732" x2="850" y2="732" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="762" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB6</text>
-<line x1="750" y1="758" x2="782" y2="758" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="750" y1="758" x2="782" y2="758" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <rect x="782" y="752" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="799" y="749" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="816" y1="758" x2="850" y2="758" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="816" y1="758" x2="850" y2="758" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <text x="738" y="788" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB7</text>
 <text x="770" y="788" font-size="11" text-anchor="start" font-weight="normal" fill="#9aa0a6" font-style="italic">spare</text>
 <rect x="850" y="378" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
-<polygon points="866,387 866,401 880,394" fill="#d93025"/>
-<line x1="882" y1="387" x2="882" y2="401" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="394" x2="866" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,387 866,401 880,394" fill="#1a73e8"/>
+<line x1="882" y1="387" x2="882" y2="401" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="394" x2="866" y2="394" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="394" x2="902" y2="394" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <polygon points="866,413 866,427 880,420" fill="#188038"/>
 <line x1="882" y1="413" x2="882" y2="427" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="850" y1="420" x2="866" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="420" x2="902" y2="420" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="866,439 866,453 880,446" fill="#1a73e8"/>
-<line x1="882" y1="439" x2="882" y2="453" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="446" x2="866" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,439 866,453 880,446" fill="#d93025"/>
+<line x1="882" y1="439" x2="882" y2="453" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="446" x2="866" y2="446" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="446" x2="902" y2="446" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="394" x2="902" y2="446" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="420.0" x2="934" y2="420.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
@@ -322,17 +322,17 @@
 <text x="956.0" y="424.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
 <text x="986" y="425.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">DMR</text>
 <rect x="850" y="456" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
-<polygon points="866,465 866,479 880,472" fill="#d93025"/>
-<line x1="882" y1="465" x2="882" y2="479" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="472" x2="866" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,465 866,479 880,472" fill="#1a73e8"/>
+<line x1="882" y1="465" x2="882" y2="479" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="472" x2="866" y2="472" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="472" x2="902" y2="472" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <polygon points="866,491 866,505 880,498" fill="#188038"/>
 <line x1="882" y1="491" x2="882" y2="505" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="850" y1="498" x2="866" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="498" x2="902" y2="498" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="866,517 866,531 880,524" fill="#1a73e8"/>
-<line x1="882" y1="517" x2="882" y2="531" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="524" x2="866" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,517 866,531 880,524" fill="#d93025"/>
+<line x1="882" y1="517" x2="882" y2="531" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="524" x2="866" y2="524" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="524" x2="902" y2="524" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="472" x2="902" y2="524" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="498.0" x2="934" y2="498.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
@@ -340,17 +340,17 @@
 <text x="956.0" y="502.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
 <text x="986" y="503.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">D-Star</text>
 <rect x="850" y="534" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
-<polygon points="866,543 866,557 880,550" fill="#d93025"/>
-<line x1="882" y1="543" x2="882" y2="557" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="550" x2="866" y2="550" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,543 866,557 880,550" fill="#1a73e8"/>
+<line x1="882" y1="543" x2="882" y2="557" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="550" x2="866" y2="550" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="550" x2="902" y2="550" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <polygon points="866,569 866,583 880,576" fill="#188038"/>
 <line x1="882" y1="569" x2="882" y2="583" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="850" y1="576" x2="866" y2="576" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="576" x2="902" y2="576" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="866,595 866,609 880,602" fill="#1a73e8"/>
-<line x1="882" y1="595" x2="882" y2="609" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="602" x2="866" y2="602" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,595 866,609 880,602" fill="#d93025"/>
+<line x1="882" y1="595" x2="882" y2="609" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="602" x2="866" y2="602" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="602" x2="902" y2="602" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="550" x2="902" y2="602" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="576.0" x2="934" y2="576.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
@@ -362,13 +362,13 @@
 <line x1="882" y1="621" x2="882" y2="635" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="850" y1="628" x2="866" y2="628" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="628" x2="902" y2="628" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="866,647 866,661 880,654" fill="#188038"/>
-<line x1="882" y1="647" x2="882" y2="661" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="654" x2="866" y2="654" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,647 866,661 880,654" fill="#1a73e8"/>
+<line x1="882" y1="647" x2="882" y2="661" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="654" x2="866" y2="654" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="654" x2="902" y2="654" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="866,673 866,687 880,680" fill="#1a73e8"/>
-<line x1="882" y1="673" x2="882" y2="687" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="680" x2="866" y2="680" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,673 866,687 880,680" fill="#188038"/>
+<line x1="882" y1="673" x2="882" y2="687" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="680" x2="866" y2="680" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="680" x2="902" y2="680" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="628" x2="902" y2="680" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="654.0" x2="934" y2="654.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
@@ -380,13 +380,13 @@
 <line x1="882" y1="699" x2="882" y2="713" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="850" y1="706" x2="866" y2="706" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="706" x2="902" y2="706" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="866,725 866,739 880,732" fill="#188038"/>
-<line x1="882" y1="725" x2="882" y2="739" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="732" x2="866" y2="732" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,725 866,739 880,732" fill="#1a73e8"/>
+<line x1="882" y1="725" x2="882" y2="739" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="732" x2="866" y2="732" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="732" x2="902" y2="732" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="866,751 866,765 880,758" fill="#1a73e8"/>
-<line x1="882" y1="751" x2="882" y2="765" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-<line x1="850" y1="758" x2="866" y2="758" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<polygon points="866,751 866,765 880,758" fill="#188038"/>
+<line x1="882" y1="751" x2="882" y2="765" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
+<line x1="850" y1="758" x2="866" y2="758" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="882" y1="758" x2="902" y2="758" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="706" x2="902" y2="758" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="902" y1="732.0" x2="934" y2="732.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
@@ -429,35 +429,35 @@
 <rect x="1086" y="538" width="32" height="20" rx="10" fill="#b00020"/>
 <text x="1102.0" y="552.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">5V</text>
 <text x="1348" y="398" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA0</text>
-<line x1="1360" y1="394" x2="1392" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="1360" y1="394" x2="1392" y2="394" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <rect x="1392" y="388" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="1409" y="385" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
-<line x1="1426" y1="394" x2="1460" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="1409" y="385" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="1426" y1="394" x2="1460" y2="394" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <text x="1348" y="424" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA1</text>
 <line x1="1360" y1="420" x2="1392" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <rect x="1392" y="414" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="1409" y="411" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
 <line x1="1426" y1="420" x2="1460" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <text x="1348" y="450" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA2</text>
-<line x1="1360" y1="446" x2="1392" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1360" y1="446" x2="1392" y2="446" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <rect x="1392" y="440" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="1409" y="437" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="1426" y1="446" x2="1460" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="1409" y="437" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="1426" y1="446" x2="1460" y2="446" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <text x="1348" y="476" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA3</text>
-<line x1="1360" y1="472" x2="1392" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="1360" y1="472" x2="1392" y2="472" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <rect x="1392" y="466" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="1409" y="463" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
-<line x1="1426" y1="472" x2="1460" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<text x="1409" y="463" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
+<line x1="1426" y1="472" x2="1460" y2="472" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <text x="1348" y="502" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA4</text>
 <line x1="1360" y1="498" x2="1392" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <rect x="1392" y="492" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
 <text x="1409" y="489" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
 <line x1="1426" y1="498" x2="1460" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <text x="1348" y="528" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA5</text>
-<line x1="1360" y1="524" x2="1392" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1360" y1="524" x2="1392" y2="524" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <rect x="1392" y="518" width="34" height="12" rx="2" fill="#fff" stroke="#202124" stroke-width="1.5"/>
-<text x="1409" y="515" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">330Ω</text>
-<line x1="1426" y1="524" x2="1460" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<text x="1409" y="515" font-size="10" text-anchor="middle" font-weight="normal" fill="#202124">470Ω</text>
+<line x1="1426" y1="524" x2="1460" y2="524" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <text x="1348" y="554" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA6</text>
 <text x="1380" y="554" font-size="11" text-anchor="start" font-weight="normal" fill="#9aa0a6" font-style="italic">spare</text>
 <text x="1348" y="580" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPA7</text>
@@ -465,17 +465,17 @@
 <text x="1348" y="606" font-size="12" text-anchor="end" font-weight="bold" fill="#202124">GPB0–7</text>
 <text x="1380" y="606" font-size="11" text-anchor="start" font-weight="normal" fill="#9aa0a6" font-style="italic">spare</text>
 <rect x="1460" y="378" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
-<polygon points="1476,387 1476,401 1490,394" fill="#d93025"/>
-<line x1="1492" y1="387" x2="1492" y2="401" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
-<line x1="1460" y1="394" x2="1476" y2="394" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<polygon points="1476,387 1476,401 1490,394" fill="#1a73e8"/>
+<line x1="1492" y1="387" x2="1492" y2="401" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="394" x2="1476" y2="394" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <line x1="1492" y1="394" x2="1512" y2="394" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <polygon points="1476,413 1476,427 1490,420" fill="#188038"/>
 <line x1="1492" y1="413" x2="1492" y2="427" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="1460" y1="420" x2="1476" y2="420" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="1492" y1="420" x2="1512" y2="420" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="1476,439 1476,453 1490,446" fill="#1a73e8"/>
-<line x1="1492" y1="439" x2="1492" y2="453" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-<line x1="1460" y1="446" x2="1476" y2="446" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<polygon points="1476,439 1476,453 1490,446" fill="#d93025"/>
+<line x1="1492" y1="439" x2="1492" y2="453" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="446" x2="1476" y2="446" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="1492" y1="446" x2="1512" y2="446" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="1512" y1="394" x2="1512" y2="446" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="1512" y1="420.0" x2="1544" y2="420.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
@@ -483,17 +483,17 @@
 <text x="1566.0" y="424.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GND</text>
 <text x="1596" y="425.0" font-size="13" text-anchor="start" font-weight="bold" fill="#202124">M17</text>
 <rect x="1460" y="456" width="70" height="84" rx="8" fill="#ffffff" stroke="#5f6368" stroke-width="1.5"/>
-<polygon points="1476,465 1476,479 1490,472" fill="#d93025"/>
-<line x1="1492" y1="465" x2="1492" y2="479" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
-<line x1="1460" y1="472" x2="1476" y2="472" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<polygon points="1476,465 1476,479 1490,472" fill="#1a73e8"/>
+<line x1="1492" y1="465" x2="1492" y2="479" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="472" x2="1476" y2="472" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
 <line x1="1492" y1="472" x2="1512" y2="472" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <polygon points="1476,491 1476,505 1490,498" fill="#188038"/>
 <line x1="1492" y1="491" x2="1492" y2="505" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="1460" y1="498" x2="1476" y2="498" stroke="#188038" stroke-width="2" stroke-linecap="round"/>
 <line x1="1492" y1="498" x2="1512" y2="498" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
-<polygon points="1476,517 1476,531 1490,524" fill="#1a73e8"/>
-<line x1="1492" y1="517" x2="1492" y2="531" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
-<line x1="1460" y1="524" x2="1476" y2="524" stroke="#1a73e8" stroke-width="2" stroke-linecap="round"/>
+<polygon points="1476,517 1476,531 1490,524" fill="#d93025"/>
+<line x1="1492" y1="517" x2="1492" y2="531" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
+<line x1="1460" y1="524" x2="1476" y2="524" stroke="#d93025" stroke-width="2" stroke-linecap="round"/>
 <line x1="1492" y1="524" x2="1512" y2="524" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="1512" y1="472" x2="1512" y2="524" stroke="#5f6368" stroke-width="1.5" stroke-linecap="round"/>
 <line x1="1512" y1="498.0" x2="1544" y2="498.0" stroke="#202124" stroke-width="2" stroke-linecap="round"/>
@@ -513,7 +513,7 @@
 <text x="542" y="1008" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">CLK</text>
 <line x1="520" y1="1004" x2="530" y2="1004" stroke="#8430ce" stroke-width="2" stroke-linecap="round"/>
 <rect x="454" y="994" width="64" height="20" rx="10" fill="#8430ce"/>
-<text x="486.0" y="1008.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO17</text>
+<text x="486.0" y="1008.5" font-size="12" text-anchor="middle" font-weight="bold" fill="#fff">GPIO24</text>
 <text x="542" y="1032" font-size="12" text-anchor="start" font-weight="bold" fill="#202124">DT</text>
 <line x1="520" y1="1028" x2="530" y2="1028" stroke="#8430ce" stroke-width="2" stroke-linecap="round"/>
 <rect x="454" y="1018" width="64" height="20" rx="10" fill="#8430ce"/>

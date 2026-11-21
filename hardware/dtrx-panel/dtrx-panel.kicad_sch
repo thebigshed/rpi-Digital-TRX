@@ -4522,7 +4522,7 @@
 		)
 		(uuid "8ed952f6-f577-53d2-8b75-1cd093f2ed19")
 	)
-	(label "YSF_B"
+	(label "YSF_R"
 		(at 233.68 45.72 0)
 		(effects
 			(font
@@ -4542,7 +4542,7 @@
 		)
 		(uuid "b77e8ce9-9d0e-5513-b21a-125ffd853e5a")
 	)
-	(label "P25_G"
+	(label "P25_B"
 		(at 233.68 50.8 0)
 		(effects
 			(font
@@ -4552,7 +4552,7 @@
 		)
 		(uuid "3fdaf2cd-7b2e-5d2a-b3ae-9b53db8de662")
 	)
-	(label "P25_B"
+	(label "P25_G"
 		(at 233.68 53.34 0)
 		(effects
 			(font
@@ -4572,7 +4572,7 @@
 		)
 		(uuid "95ec7fe5-fa02-5998-992e-97367a585397")
 	)
-	(label "NXDN_G"
+	(label "NXDN_B"
 		(at 233.68 58.42 0)
 		(effects
 			(font
@@ -4582,7 +4582,7 @@
 		)
 		(uuid "8d5e965f-11a1-5785-b45d-00058af18567")
 	)
-	(label "NXDN_B"
+	(label "NXDN_G"
 		(at 233.68 60.96 0)
 		(effects
 			(font
@@ -4592,7 +4592,7 @@
 		)
 		(uuid "dee51313-11e7-55d4-97c0-893318a986c0")
 	)
-	(label "DMR_R"
+	(label "DMR_B"
 		(at 233.68 68.58 0)
 		(effects
 			(font
@@ -4612,7 +4612,7 @@
 		)
 		(uuid "ace162f2-7f2a-5c1a-8e44-4bd43b7d02c7")
 	)
-	(label "DMR_B"
+	(label "DMR_R"
 		(at 233.68 73.66 0)
 		(effects
 			(font
@@ -4622,7 +4622,7 @@
 		)
 		(uuid "9e695dfa-73a1-591e-9eac-64d978557aea")
 	)
-	(label "DSTAR_R"
+	(label "DSTAR_B"
 		(at 233.68 76.2 0)
 		(effects
 			(font
@@ -4642,7 +4642,7 @@
 		)
 		(uuid "c1e0b185-9b9f-533f-ab16-943b3b035eb1")
 	)
-	(label "DSTAR_B"
+	(label "DSTAR_R"
 		(at 233.68 81.28 0)
 		(effects
 			(font
@@ -4652,7 +4652,7 @@
 		)
 		(uuid "1f1b6a6b-10ff-5cee-b011-84d8ecc11f67")
 	)
-	(label "YSF_R"
+	(label "YSF_B"
 		(at 233.68 83.82 0)
 		(effects
 			(font
@@ -4752,7 +4752,7 @@
 		)
 		(uuid "f7c453b7-6978-5519-902e-2df649728bb7")
 	)
-	(label "M17_R"
+	(label "M17_B"
 		(at 314.96 68.58 0)
 		(effects
 			(font
@@ -4772,7 +4772,7 @@
 		)
 		(uuid "46b83e28-148e-58c8-91e4-bda79c0a74d7")
 	)
-	(label "M17_B"
+	(label "M17_R"
 		(at 314.96 73.66 0)
 		(effects
 			(font
@@ -4782,7 +4782,7 @@
 		)
 		(uuid "14e1f530-bed3-5f73-ac76-bd78feaef626")
 	)
-	(label "STATUS_R"
+	(label "STATUS_B"
 		(at 314.96 76.2 0)
 		(effects
 			(font
@@ -4802,7 +4802,7 @@
 		)
 		(uuid "d0147e38-3452-599a-824b-f4afb7b4e410")
 	)
-	(label "STATUS_B"
+	(label "STATUS_R"
 		(at 314.96 81.28 0)
 		(effects
 			(font

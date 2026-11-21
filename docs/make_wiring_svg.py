@@ -66,9 +66,9 @@ text(hx + 185, hy - 8, 'Raspberry Pi 4 — 40-pin header', 15, 'middle', 'bold')
 pins = {
     1: ('3.3 V', '3V3'), 2: ('5 V', '5V'), 3: ('GPIO 2 SDA', 'SDA'), 4: ('5 V', '5V'), 5: ('GPIO 3 SCL', 'SCL'),
     6: ('GND', 'GND'), 7: ('GPIO 4 — DV3000 reset', 'DV'), 8: ('GPIO 14 — DV3000 TX', 'DV'), 9: ('GND', 'GND'),
-    10: ('GPIO 15 — DV3000 RX', 'DV'), 11: ('GPIO 17 CH-CLK', 'ENC'), 12: ('GPIO 18 VOL-SW', 'ENC'),
+    10: ('GPIO 15 — DV3000 RX', 'DV'), 11: ('GPIO 17 — DV3000 uses', 'DV'), 12: ('GPIO 18 VOL-SW', 'ENC'),
     13: ('GPIO 27 CH-DT', 'ENC'), 14: ('GND', 'GND'), 15: ('GPIO 22 CH-SW', 'ENC'), 16: ('GPIO 23 PTT', 'PTT'),
-    17: ('3.3 V', '3V3'), 18: ('GPIO 24 spare', None), 19: ('GPIO 10', None), 20: ('GND', 'GND'),
+    17: ('3.3 V', '3V3'), 18: ('GPIO 24 CH-CLK', 'ENC'), 19: ('GPIO 10', None), 20: ('GND', 'GND'),
     21: ('GPIO 9', None), 22: ('GPIO 25 spare', None), 23: ('GPIO 11', None), 24: ('GPIO 8', None),
     25: ('GND', 'GND'), 26: ('GPIO 7', None), 27: ('ID_SD', None), 28: ('ID_SC', None),
     29: ('GPIO 5 DMR', 'BTN'), 30: ('GND', 'GND'), 31: ('GPIO 6 D-STAR', 'BTN'), 32: ('GPIO 12 YSF', 'BTN'),
@@ -163,11 +163,11 @@ def module(x, y, title, addr, a0, a1, rows):
         line(x + 296, yy, x + 330, yy, cc)
     return h
 
-def led_group(x, y, name, rows_y):
-    """An RGB LED (common cathode) whose three anode legs arrive at rows_y; cathode to GND."""
+def led_group(x, y, name, rows_y, colours='BGR'):
+    """An RGB LED (common cathode) whose three anode legs (colours, in order) arrive at rows_y; cathode to GND."""
     top, bot = min(rows_y) - 16, max(rows_y) + 16
     rect(x, top, 70, bot - top, '#ffffff', '#5f6368', 8)
-    for yy, colr in zip(rows_y, 'RGB'):
+    for yy, colr in zip(rows_y, colours):
         cc = {'R': '#d93025', 'G': '#188038', 'B': '#1a73e8'}[colr]
         # diode pointing right (current flows from the module pin through the LED to GND)
         add(f'<polygon points="{x+16},{yy-7} {x+16},{yy+7} {x+30},{yy}" fill="{cc}"/>')
@@ -181,19 +181,19 @@ def led_group(x, y, name, rows_y):
     text(x + 136, mid + 5, name, 13, 'start', 'bold')
 
 ax, ay = 520, 330
-rowsA = [('GPA0', 'DMR', 'R'), ('GPA1', 'DMR', 'G'), ('GPA2', 'DMR', 'B'),
-         ('GPA3', 'D-Star', 'R'), ('GPA4', 'D-Star', 'G'), ('GPA5', 'D-Star', 'B'),
-         ('GPA6', 'YSF', 'R'), ('GPA7', 'YSF', 'G'), ('GPB0', 'YSF', 'B'),
-         ('GPB1', 'P25', 'R'), ('GPB2', 'P25', 'G'), ('GPB3', 'P25', 'B'),
-         ('GPB4', 'NXDN', 'R'), ('GPB5', 'NXDN', 'G'), ('GPB6', 'NXDN', 'B'), ('GPB7', None, None)]
+rowsA = [('GPA0', 'DMR', 'B'), ('GPA1', 'DMR', 'G'), ('GPA2', 'DMR', 'R'),
+         ('GPA3', 'D-Star', 'B'), ('GPA4', 'D-Star', 'G'), ('GPA5', 'D-Star', 'R'),
+         ('GPA6', 'YSF', 'B'), ('GPA7', 'YSF', 'G'), ('GPB0', 'YSF', 'R'),
+         ('GPB1', 'P25', 'R'), ('GPB2', 'P25', 'B'), ('GPB3', 'P25', 'G'),
+         ('GPB4', 'NXDN', 'R'), ('GPB5', 'NXDN', 'B'), ('GPB6', 'NXDN', 'G'), ('GPB7', None, None)]
 module(ax, ay, 'Module A', '0x21', '5V', 'GND', rowsA)
 for g, name in enumerate(['DMR', 'D-Star', 'YSF', 'P25', 'NXDN']):
     ys = [ay + 64 + (g * 3 + k) * 26 for k in range(3)]
-    led_group(ax + 330, ys, name, ys)
+    led_group(ax + 330, ys, name, ys, ''.join(r[2] for r in rowsA[g * 3:g * 3 + 3]))
 
 bx, by = 1130, 330
-rowsB = [('GPA0', 'M17', 'R'), ('GPA1', 'M17', 'G'), ('GPA2', 'M17', 'B'),
-         ('GPA3', 'Status', 'R'), ('GPA4', 'Status', 'G'), ('GPA5', 'Status', 'B'),
+rowsB = [('GPA0', 'M17', 'B'), ('GPA1', 'M17', 'G'), ('GPA2', 'M17', 'R'),
+         ('GPA3', 'Status', 'B'), ('GPA4', 'Status', 'G'), ('GPA5', 'Status', 'R'),
          ('GPA6', None, None), ('GPA7', None, None), ('GPB0–7', None, None)]
 module(bx, by, 'Module B', '0x22', 'GND', '5V', rowsB)
 for name, first in (('M17', 0), ('Status', 3)):
@@ -219,7 +219,7 @@ def encoder(x, y, title, nets):
         line(x - 10, yy, x, yy, C[k])
         net(x - 12, yy, n, C[k], 'end')
 
-encoder(530, ey, 'KY-040: CHANNEL', [('CLK', 'GPIO17', 'ENC'), ('DT', 'GPIO27', 'ENC'), ('SW', 'GPIO22', 'ENC'),
+encoder(530, ey, 'KY-040: CHANNEL', [('CLK', 'GPIO24', 'ENC'), ('DT', 'GPIO27', 'ENC'), ('SW', 'GPIO22', 'ENC'),
                                      ('+', '3.3V', '3V3'), ('GND', 'GND', 'GND')])
 encoder(850, ey, 'KY-040: VOLUME', [('CLK', 'GPIO20', 'ENC'), ('DT', 'GPIO21', 'ENC'), ('SW', 'GPIO18', 'ENC'),
                                     ('+', '3.3V', '3V3'), ('GND', 'GND', 'GND')])
