@@ -1,5 +1,5 @@
 #!/bin/sh
-# rpi-Digital-TRX post-build: runs after Buildroot's own Pi 4 post-build script.
+# rpi-Digital-TRX post-build (all boards): runs after Buildroot's own post-build script.
 set -eu
 TARGET_DIR="$1"
 
@@ -15,7 +15,7 @@ sed -i 's/^load-module module-native-protocol-unix$/load-module module-native-pr
     "${TARGET_DIR}/etc/pulse/system.pa"
 
 # Safe shutdown (Menu held on the front panel): after the filesystems are unmounted or read-only,
-# write "Safe to unplug" on the display. The Pi 4 keeps 5 V on the header after it halts, so the
+# write "Safe to unplug" on the display. The Pi keeps 5 V on the header after it halts, so the
 # message stays up until the power is pulled.
 grep -q -- '--lcd-message' "${TARGET_DIR}/etc/inittab" || \
     sed -i '\|^::shutdown:/bin/umount -a -r|a ::shutdown:/usr/bin/digital-transceiver --lcd-message "Digital TRX" "Safe to unplug"' \

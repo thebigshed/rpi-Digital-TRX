@@ -1,6 +1,7 @@
 # Buildroot itself and build output
 buildroot/
 output/
+output-*/
 dl/
 
 # local settings for testing (personal details)
@@ -9,3 +10,9 @@ dl/
 
 # desktop test builds of the app
 /app/build/
+
+# KiCad
+hardware/**/*-backups/
+hardware/**/*.kicad_prl
+hardware/**/fp-info-cache
+hardware/**/*.lck

@@ -1,0 +1,4 @@
+(sym_lib_table
+	(version 7)
+	(lib (name "dtrx") (type "KiCad") (uri "${KIPRJMOD}/../lib/dtrx.kicad_sym") (options "") (descr "Digital TRX parts"))
+)

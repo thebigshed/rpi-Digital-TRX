@@ -1,14 +1,12 @@
-# rpi-Digital-TRX: added on top of Buildroot's raspberrypi4_64_defconfig by build.sh
+# rpi-Digital-TRX, all boards: added by build.sh on top of Buildroot's board defconfig and
+# the board's own fragment (rpi4.fragment, zero2w.fragment)
 
 # System
 BR2_TARGET_GENERIC_HOSTNAME="dtrx"
 BR2_TARGET_GENERIC_ISSUE="Digital TRX"
 BR2_ROOTFS_DEVICE_CREATION_DYNAMIC_EUDEV=y
 BR2_TARGET_GENERIC_GETTY_PORT="tty1"
-BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_DTRX_PATH)/board/rpi4/rootfs-overlay"
-BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi4-64/post-build.sh $(BR2_EXTERNAL_DTRX_PATH)/board/rpi4/post-build.sh"
-BR2_PACKAGE_RPI_FIRMWARE_CONFIG_FILE="$(BR2_EXTERNAL_DTRX_PATH)/board/rpi4/config.txt"
-BR2_PACKAGE_RPI_FIRMWARE_CMDLINE_FILE="$(BR2_EXTERNAL_DTRX_PATH)/board/rpi4/cmdline.txt"
+BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_DTRX_PATH)/board/common/rootfs-overlay"
 BR2_TARGET_ROOTFS_EXT2_SIZE="512M"
 
 # Wi-Fi, time, remote access

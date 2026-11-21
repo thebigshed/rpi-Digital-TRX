@@ -111,7 +111,14 @@ level shifter's **HV1** and **HV2**. They differ only in their address pins.
 | RESET | VCC | VCC |
 
 Most modules already pull RESET up; check yours. Some have solder jumpers for A0–A2 instead of
-pins. 0x20 is left free so the Adafruit plate can still be fitted. If both modules have their own
+pins.
+
+> **Warning: modules with A0–A2 jumper pads.** On the common green module (header ITB, ITA,
+> RST, SDA, SCL, GND, VCC), each of A0–A2 has three pads: GND, the address pin, and VCC. A 0 Ω
+> resistor joins the address pin to GND as supplied. To set a pin to VCC, **move** that resistor
+> to the VCC side (or remove it and bridge the address pin to VCC). Never add a solder bridge to
+> VCC with the resistor still in place: that shorts VCC straight to GND. Before connecting,
+> meter VCC to GND on the module: it must not read near 0 Ω. 0x20 is left free so the Adafruit plate can still be fitted. If both modules have their own
 I2C pull-up resistors (often 10 kΩ), that's fine together with the Pi's; there's no need to
 remove them.
 

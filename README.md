@@ -1,6 +1,6 @@
 # rpi-Digital-TRX
 
-A stand-alone digital voice network radio on a Raspberry Pi 4. It is the hardware version of
+A stand-alone digital voice network radio on a Raspberry Pi 4 or Pi Zero 2 W. It is the hardware version of
 [Digital Transceiver](https://github.com/thebigshed/digital-transceiver): it listens and
 transmits on DMR, D-Star, YSF, P25, NXDN and M17, and receives DAPNET pages, over Wi-Fi.
 There's no desktop. It boots straight into the radio, and you drive it from a front panel: mode
@@ -10,7 +10,7 @@ buttons with RGB LEDs, a channel knob, a volume knob and a PTT button, with a 20
 
 | Part | Used for | Connection |
 |---|---|---|
-| Raspberry Pi 4 | Runs everything | — |
+| Raspberry Pi 4, or Pi Zero 2 W | Runs everything | — |
 | NW Digital Radio DV3000 (ASSY1101, AMBE-3000R) | AMBE / AMBE+2 encode and decode in hardware: DMR, D-Star, YSF (DN), NXDN | First 26 header pins: serial port `/dev/ttyAMA0` at 230400 baud, reset on GPIO 4 |
 | 20×4 LCD (HD44780) with a PCF8574 I2C backpack | Display | I2C at 0x27 or 0x3F, on the 5 V side of an I2C level shifter |
 | Front panel ([wiring](docs/wiring.md)) | Six mode buttons, Menu, PTT, two KY-040 rotary encoders (channel and volume) | GPIO, through a 40-pin splitter |
@@ -98,17 +98,32 @@ The AMBE board sits on the first 26 header pins, and the panel is wired to the o
 
 ## Building
 
-```sh
-./build.sh
-```
+| Board | Command | Image |
+|---|---|---|
+| Raspberry Pi 4 | `./build.sh` | `output/images/sdcard.img` |
+| Raspberry Pi Zero 2 W | `BOARD=zero2w ./build.sh` | `output-zero2w/images/sdcard.img` |
 
-The first build fetches Buildroot 2026.02.3 and builds everything, which takes a while. The
-image is `output/images/sdcard.img`. The app is built from `app/` in this project. To rebuild
-only the app after changing it, run `./build.sh digital-transceiver-rebuild all`.
+The first build for a board fetches Buildroot 2026.02.3 (once) and builds everything, which
+takes a while. Each board has its own output folder, and the downloaded sources are shared. The
+app is built from `app/` in this project. To rebuild only the app after changing it, run
+`./build.sh digital-transceiver-rebuild all`, with `BOARD=zero2w` in front for the Zero.
 
-`build.sh` reconfigures Buildroot when `external/configs/dtrx.fragment` changes. Buildroot
-leaves removed packages in the image until a clean build, so after removing any, run
-`./build.sh clean all`.
+`build.sh` reconfigures Buildroot when `external/configs/dtrx.fragment` or the board's fragment
+changes. Buildroot leaves removed packages in the image until a clean build, so after removing
+any, run `./build.sh clean all`.
+
+### Raspberry Pi Zero 2 W
+
+The Zero 2 W image runs the same software with the same hardware: the DV3000 fits the first 26
+header pins, and the front panel wiring is unchanged. The differences are:
+
+- **USB:** the headset goes in the **USB** port (the inner micro-USB, not PWR IN) through a
+  micro-USB OTG adapter. Anything else needs a small hub.
+- **No Ethernet:** Wi-Fi is the only network, so `wpa_supplicant.conf` must be on the boot
+  partition before the first boot. Wi-Fi is 2.4 GHz only.
+- **No analog audio:** the USB headset is the only audio device.
+- **Header:** the plain Zero 2 W has no header fitted. Use a "WH" board, or solder one on.
+- **Power:** a 5 V 2.5 A supply is plenty.
 
 ### Trying the app on a PC
 
@@ -129,8 +144,10 @@ them; don't run it while the radio or the desktop app is online with the same ID
 
 ## Setting up the SD card
 
-1. Write `output/images/sdcard.img` to the card, for example with
-   `sudo dd if=output/images/sdcard.img of=/dev/sdX bs=4M conv=fsync`.
+1. Write the board's image to the card (`output/images/sdcard.img` for the Pi 4,
+   `output-zero2w/images/sdcard.img` for the Zero 2 W), for example with
+   `sudo dd if=output/images/sdcard.img of=/dev/sdX bs=4M conv=fsync`. Write to the whole card
+   (`/dev/sdX`), not a partition (`/dev/sdX1`).
 2. On the card's boot partition (FAT, readable on any PC), add:
 
    | File | What it's for |
@@ -157,13 +174,17 @@ app/                The radio app (CMake, Qt 6 Core and Network)
   src/              Radio, FrontPanel, the hardware drivers, decoders and network clients
   third_party/      mbelib (AMBE / IMBE decoding) and the OP25 vocoder (encoding)
 external/           Buildroot external tree (BR2_EXTERNAL "DTRX")
-  configs/          dtrx.fragment: added to Buildroot's raspberrypi4_64_defconfig
+  configs/          dtrx.fragment (all boards), rpi4.fragment and zero2w.fragment: added to
+                    Buildroot's raspberrypi4_64 / raspberrypizero2w_64 defconfig
   package/          codec2, and digital-transceiver (built from app/)
-  board/rpi4/       config.txt, cmdline.txt, post-build.sh and the rootfs overlay
+  board/common/     post-build.sh and the rootfs overlay, for all boards
                     (init scripts: boot-partition config, Wi-Fi, the app)
+  board/rpi4/       Pi 4 firmware config.txt and cmdline.txt
+  board/zero2w/     Zero 2 W firmware config.txt and cmdline.txt
 boot-examples/      Example files for the boot partition
 buildroot/          Buildroot (fetched by build.sh, not committed)
-output/             Build output (not committed)
+output/             Pi 4 build output (not committed)
+output-zero2w/      Zero 2 W build output (not committed)
 ```
 
 ## Next steps

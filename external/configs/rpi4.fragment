@@ -1,0 +1,4 @@
+# rpi-Digital-TRX on a Raspberry Pi 4 (on top of raspberrypi4_64_defconfig)
+BR2_ROOTFS_POST_BUILD_SCRIPT="board/raspberrypi4-64/post-build.sh $(BR2_EXTERNAL_DTRX_PATH)/board/common/post-build.sh"
+BR2_PACKAGE_RPI_FIRMWARE_CONFIG_FILE="$(BR2_EXTERNAL_DTRX_PATH)/board/rpi4/config.txt"
+BR2_PACKAGE_RPI_FIRMWARE_CMDLINE_FILE="$(BR2_EXTERNAL_DTRX_PATH)/board/rpi4/cmdline.txt"
