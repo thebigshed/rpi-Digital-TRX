@@ -6933,7 +6933,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Staggered_Pins"
+		(property "Footprint" "dtrx:LED_D5.0mm-4_RGB"
 			(at 403.86 35.56 0)
 			(effects
 				(font
@@ -7171,7 +7171,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Staggered_Pins"
+		(property "Footprint" "dtrx:LED_D5.0mm-4_RGB"
 			(at 492.76 35.56 0)
 			(effects
 				(font
@@ -7409,7 +7409,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Staggered_Pins"
+		(property "Footprint" "dtrx:LED_D5.0mm-4_RGB"
 			(at 53.34 116.84 0)
 			(effects
 				(font
@@ -7647,7 +7647,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Staggered_Pins"
+		(property "Footprint" "dtrx:LED_D5.0mm-4_RGB"
 			(at 142.24 116.84 0)
 			(effects
 				(font
@@ -7885,7 +7885,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Staggered_Pins"
+		(property "Footprint" "dtrx:LED_D5.0mm-4_RGB"
 			(at 233.68 116.84 0)
 			(effects
 				(font
@@ -8123,7 +8123,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Staggered_Pins"
+		(property "Footprint" "dtrx:LED_D5.0mm-4_RGB"
 			(at 322.58 116.84 0)
 			(effects
 				(font
@@ -8361,7 +8361,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LED_THT:LED_D5.0mm-4_RGB_Staggered_Pins"
+		(property "Footprint" "dtrx:LED_D5.0mm-4_RGB"
 			(at 414.02 116.84 0)
 			(effects
 				(font

@@ -210,6 +210,28 @@ def make_custom_lib():
         f.write(dump(lib) + '\n')
 
 
+def make_led_footprint():
+    """The stock 5 mm RGB LED with a plain silkscreen ring. The stock outline arcs pass within
+    0.1 mm of pads 2 and 4, so the solder mask clips them."""
+    with open(f'{KI}/footprints/LED_THT.pretty/LED_D5.0mm-4_RGB_Staggered_Pins.kicad_mod') as f:
+        fp = parse(f.read())
+    cx, cy, r = 2.413, 0.762, 3.9          # centre of the LED body; clears every pad
+    fp[1] = Q('LED_D5.0mm-4_RGB')
+    fp[:] = [x for x in fp if not (isinstance(x, list) and x[0] in ('fp_arc', 'fp_line', 'fp_circle')
+                                   and str(find(x, 'layer')[1]) == 'F.SilkS')]
+    for x in fp:
+        if isinstance(x, list) and x[0] == 'property' and str(x[1]) == 'Reference':
+            find(x, 'at')[1:] = [cx, round(cy - r - 1.0, 3), 0]
+        if isinstance(x, list) and x[0] == 'descr':
+            x[1] = Q('5 mm RGB LED, 4 staggered pins (R K G B), with a plain silkscreen ring')
+    ring = parse(f'(fp_circle (center {cx} {cy}) (end {cx + r} {cy}) '
+                 f'(stroke (width 0.12) (type solid)) (fill no) (layer "F.SilkS") '
+                 f'(uuid "{uid("ledfp", "ring")}"))')
+    fp.insert(next(i for i, x in enumerate(fp) if isinstance(x, list) and x[0] == 'pad'), ring)
+    with open(os.path.join(HERE, 'lib', 'dtrx.pretty', 'LED_D5.0mm-4_RGB.kicad_mod'), 'w') as f:
+        f.write(dump(fp) + '\n')
+
+
 def make_lcd_footprint():
     p = []
     p.append(f'(footprint "LCD_2004A_98x60"\n\t(version 20241229)\n\t(generator "pcbnew")\n'
@@ -287,10 +309,10 @@ def main_board():
           'Connector_PinHeader_2.54mm:PinHeader_2x13_P2.54mm_Vertical',
           {n: pi[n] for n in range(1, 27) if n in pi}, pos=('o', 62, 12), rot=90)
     b.add('J3', 'Connector_Generic:Conn_02x10_Odd_Even', 'To panel (20-way IDC)',
-          'Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical', IDC, pos=('c', 138, 40))
+          'Connector_IDC:IDC-Header_2x10_P2.54mm_Vertical', IDC, pos=('c', 138, 40), silk='PANEL')
     b.add('J1', 'Connector_Generic:Conn_01x02', '5V in',
           'TerminalBlock_Phoenix:TerminalBlock_Phoenix_MKDS-1,5-2_1x02_P5.00mm_Horizontal',
-          {1: 'VIN', 2: 'GND'}, pos=('c', 60, 78))
+          {1: 'VIN', 2: 'GND'}, pos=('c', 60, 78), silk='5V IN\n+   -')
     b.add('F1', 'Device:Polyfuse', 'PTC 2A hold', 'Fuse:Fuse_Bourns_MF-RG300',
           {1: 'VIN', 2: '+5V'}, pos=('c', 80, 78))
     b.add('C1', 'Device:C_Polarized', '470uF 10V', 'Capacitor_THT:CP_Radial_D8.0mm_P3.50mm',
@@ -299,9 +321,7 @@ def main_board():
     for i, (x, y) in enumerate([(4, 4), (146, 4), (4, 81), (146, 81)]):
         b.add(f'H{i + 1}', 'Mechanical:MountingHole', 'M3', H_FP, pos=('c', x, y))
     b.notes += [(84, 47, 'DV3000 board sits here\n(check its size and holes)', 'F.Fab'),
-                (24, 79, 'Pi Zero 2 W face down\n<- USB / HDMI', 'F.SilkS'),
-                (138, 24, 'PANEL', 'F.SilkS'),
-                (60, 72, '5V IN  + -', 'F.SilkS')]
+                (24, 79, 'Pi Zero 2 W face down\n<- USB / HDMI', 'F.SilkS')]
     return b
 
 
@@ -363,8 +383,9 @@ def panel_board():
             lpos = ('c', W - 9, rows[row])
         else:
             lpos = ('c', W / 2, 74)
-        b.add(ref, 'Device:LED_RKGB', f'RGB LED {m}', 'LED_THT:LED_D5.0mm-4_RGB_Staggered_Pins',
-              {1: f'{m}_RA', 2: 'GND', 3: f'{m}_GA', 4: f'{m}_BA'}, pos=lpos)
+        b.add(ref, 'Device:LED_RKGB', f'RGB LED {m}', 'dtrx:LED_D5.0mm-4_RGB',
+              {1: f'{m}_RA', 2: 'GND', 3: f'{m}_GA', 4: f'{m}_BA'}, pos=lpos,
+              silk='STATUS' if m == 'STATUS' else None)
         for c, val in (('R', '470R'), ('G', '330R'), ('B', '330R')):
             b.add(f'R{rn}', 'Device:R', val, R_FP, {1: f'{m}_{c}', 2: f'{m}_{c}A'}, back=True)
             rn += 1
@@ -412,8 +433,7 @@ def panel_board():
     back = [p.ref for p in b.parts if p.back and p.pos is None]
     # inside the LCD outline, clear of its pin row and mounting holes
     b.pack.append(([(88, 12, 138, 61), (77, 35, 88, 61)], back))
-    b.notes += [(W / 2, 70, 'STATUS', 'F.SilkS'),
-                (W / 2, 97, 'Digital TRX panel', 'B.SilkS')]
+    b.notes += [(W / 2, 97, 'Digital TRX panel', 'B.SilkS')]
     return b
 
 
@@ -598,6 +618,8 @@ def write_pcb(b, sym_uuid, sheet):
                 c = pads_centre(fp)
                 fp.Move(target - c)
         if p.silk:
+            # the label names the part, so its reference designator would only clash with it
+            fp.Reference().SetVisible(False)
             t = pcbnew.PCB_TEXT(board)
             t.SetText(p.silk)
             t.SetLayer(pcbnew.F_SilkS)
@@ -606,19 +628,21 @@ def write_pcb(b, sym_uuid, sheet):
             bb = fp.GetCourtyard(pcbnew.F_CrtYd).BBox() if hasattr(fp, 'GetCourtyard') else None
             c = pads_centre(fp)
             top = fp.GetBoundingBox(False).GetTop() if bb is None else bb.GetTop()
-            t.SetPosition(pcbnew.VECTOR2I(c.x, top - mm(1.6)))
+            t.SetVertJustify(pcbnew.GR_TEXT_V_ALIGN_BOTTOM)
+            t.SetPosition(pcbnew.VECTOR2I(c.x, top - mm(0.6)))
             board.Add(t)
 
     # automatic packing of the remaining back-side parts
     for regions, refs in b.pack:
-        order = sorted(refs, key=lambda r: (-fps[r].GetBoundingBox(False).GetHeight(), r))
+        # the boxes include the reference text, so no label lands on a neighbour
+        order = sorted(refs, key=lambda r: (-fps[r].GetBoundingBox(True).GetHeight(), r))
         regions = list(regions)
         x0, y0, x1, y1 = regions.pop(0)
         cx, cy, rowh = x0, y0, 0.0
         gap = 1.2
         for r in order:
             fp = fps[r]
-            bb = fp.GetBoundingBox(False)
+            bb = fp.GetBoundingBox(True)
             w, h = pcbnew.ToMM(bb.GetWidth()), pcbnew.ToMM(bb.GetHeight())
             if cx + w > x1:
                 cx, cy, rowh = x0, cy + rowh + gap, 0.0
@@ -717,6 +741,7 @@ def main():
     os.makedirs(os.path.join(HERE, 'lib', 'dtrx.pretty'), exist_ok=True)
     make_custom_lib()
     make_lcd_footprint()
+    make_led_footprint()
     for b in (main_board(), panel_board()):
         write_project(b)
         sym_uuid = {}
