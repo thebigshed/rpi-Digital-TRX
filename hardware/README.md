@@ -8,11 +8,12 @@ Two boards joined by a 20-way IDC ribbon cable (pin 1 to pin 1):
 | `dtrx-panel/` | The front panel: 20x4 LCD in the middle, three mode buttons with RGB LEDs down each side, volume encoder and Menu bottom left, PTT and channel encoder bottom right, the status LED under the display. J2 for the LCD's I2C backpack. On the back: both MCP23017 LED drivers, the I2C level shifter and the pull-ups |
 
 Open `dtrx-main/dtrx-main.kicad_pro` or `dtrx-panel/dtrx-panel.kicad_pro` in KiCad. Each has a
-schematic, a PCB with every part placed and a ground pour on both sides (press **B** to fill it),
-and a PDF of the schematic.
+schematic, a routed 2-layer PCB with a ground pour on both sides, and a PDF of the schematic.
 
-Nothing is routed yet. Route both boards in KiCad (2 layers, through-hole except the three SOT-23
-FETs), then run DRC.
+Both boards were autorouted with Freerouting by `route.py`, ground included, so no pin depends
+on the pour. DRC shows every connection made and the PCB matching its schematic. What's left are
+warnings: overlapping silkscreen text, and a few ground pins whose thermal relief has only one
+spoke to the pour (they're joined by tracks as well). Tidy the silkscreen before ordering.
 
 The design matches the app as it is. Buttons and encoders go to the same Pi GPIO pins, the LED
 drivers sit at 0x21 and 0x22, and the LCD keeps its own I2C backpack (0x27 or 0x3F). So no
@@ -22,7 +23,8 @@ software changes are needed apart from building the image for the Pi Zero 2 W.
 
 `gen_boards.py` writes both projects from scratch: `python3 hardware/gen_boards.py` (it needs KiCad's
 `pcbnew` Python module). Re-running it **overwrites** any routing or hand changes, so make design
-changes in the script first and route last. Part values, pin assignments, positions and the LCD
+changes in the script first, then route again with `python3 hardware/route.py` (needs Java and the
+[Freerouting](https://github.com/freerouting/freerouting/releases) jar; see the top of the script). Part values, pin assignments, positions and the LCD
 dimensions are all near the top of the script.
 
 ## Ribbon (J3 on the main board, J1 on the panel)
